@@ -1147,15 +1147,349 @@
             box-shadow: 0 0 16px rgba(255, 107, 53, 0.1);
         }
 
-        /* ── RESPONSIVE ── */
-        @media (max-width: 768px) {
-            .hero {
-                grid-template-columns: 1fr;
-                padding-top: 6rem;
+        /* ── HAMBURGER MENU ── */
+        .hamburger {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+            z-index: 102;
+            flex-direction: column;
+            gap: 5px;
+        }
+
+        .hamburger span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--text);
+            border-radius: 2px;
+            transition: all 0.35s var(--ease-out-expo);
+            transform-origin: center;
+        }
+
+        .hamburger.active span:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+        }
+
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            transform: scaleX(0);
+        }
+
+        .hamburger.active span:nth-child(3) {
+            transform: rotate(-45deg) translate(5px, -5px);
+        }
+
+        /* ── MOBILE OVERLAY ── */
+        .mobile-overlay {
+            position: fixed;
+            inset: 0;
+            background: rgba(8, 11, 15, 0.96);
+            backdrop-filter: blur(24px);
+            -webkit-backdrop-filter: blur(24px);
+            z-index: 99;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity 0.4s var(--ease-out-expo);
+        }
+
+        .mobile-overlay.active {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .mobile-nav {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .mobile-nav-link {
+            font-family: 'Syne', sans-serif;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--muted);
+            text-decoration: none;
+            transition: color 0.3s, transform 0.3s var(--ease-spring);
+            transform: translateY(20px);
+            opacity: 0;
+        }
+
+        .mobile-overlay.active .mobile-nav-link {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .mobile-nav-link:nth-child(1) {
+            transition-delay: 0.05s;
+        }
+
+        .mobile-nav-link:nth-child(2) {
+            transition-delay: 0.1s;
+        }
+
+        .mobile-nav-link:nth-child(3) {
+            transition-delay: 0.15s;
+        }
+
+        .mobile-nav-link:nth-child(4) {
+            transition-delay: 0.2s;
+        }
+
+        .mobile-nav-link:hover {
+            color: var(--accent);
+            transform: scale(1.05);
+        }
+
+        /* ── HERO IMAGE DESKTOP ── */
+        .hero-image-desktop {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 1.5rem;
+        }
+
+        .profile-ring {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            padding: 4px;
+            background: conic-gradient(var(--accent), var(--accent3), var(--accent2), var(--accent));
+            animation: ring-spin 6s linear infinite;
+            box-shadow: 0 0 40px rgba(0, 210, 190, 0.2);
+        }
+
+        .profile-ring img {
+            width: 100%;
+            height: 100%;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--bg);
+        }
+
+        @keyframes ring-spin {
+            to {
+                filter: hue-rotate(360deg);
+            }
+        }
+
+        /* ── HERO PROFILE MOBILE ── */
+        .hero-profile-mobile {
+            display: none;
+            justify-content: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .hero-profile-mobile img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid var(--accent);
+            box-shadow: 0 0 30px rgba(0, 210, 190, 0.25);
+        }
+
+        /* ── FEATURED PROJECT ── */
+        .featured-project {
+            background: var(--surface);
+            border: 1px solid rgba(0, 210, 190, 0.25);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            position: relative;
+            overflow: hidden;
+            transition: border-color 0.4s, box-shadow 0.4s, transform 0.4s var(--ease-out-expo);
+        }
+
+        .featured-project::before {
+            content: '';
+            position: absolute;
+            inset: -1px;
+            border-radius: 8px;
+            padding: 1px;
+            background: linear-gradient(135deg, var(--accent), var(--accent3), var(--accent2));
+            mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+            -webkit-mask-composite: xor;
+            mask-composite: exclude;
+            opacity: 0.5;
+            z-index: 0;
+            animation: gradient-border-shift 4s ease-in-out infinite alternate;
+        }
+
+        @keyframes gradient-border-shift {
+            0% {
+                opacity: 0.3;
             }
 
-            .stat-panel {
+            100% {
+                opacity: 0.7;
+            }
+        }
+
+        .featured-project:hover {
+            border-color: var(--accent);
+            box-shadow: 0 12px 50px rgba(0, 210, 190, 0.12);
+            transform: translateY(-3px);
+        }
+
+        .featured-badge {
+            font-size: 0.65rem;
+            letter-spacing: 0.2em;
+            color: var(--accent);
+            margin-bottom: 1.25rem;
+            font-weight: 600;
+        }
+
+        .featured-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .featured-text {
+            position: relative;
+        }
+
+        .featured-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+        }
+
+        /* ── GRE BADGE ── */
+        .gre-badge {
+            background: rgba(0, 210, 190, 0.06);
+            border: 1px solid rgba(0, 210, 190, 0.2);
+            border-radius: 6px;
+            padding: 1rem 1.25rem;
+            margin-top: 1.25rem;
+            display: inline-block;
+            transition: box-shadow 0.3s, border-color 0.3s;
+        }
+
+        .gre-badge:hover {
+            box-shadow: 0 0 20px rgba(0, 210, 190, 0.15);
+            border-color: rgba(0, 210, 190, 0.4);
+        }
+
+        .gre-score {
+            font-family: 'Syne', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--accent);
+            line-height: 1;
+        }
+
+        .gre-score span {
+            font-size: 1.2rem;
+            color: var(--muted);
+            font-weight: 400;
+        }
+
+        .gre-detail {
+            font-size: 0.7rem;
+            color: var(--muted);
+            margin-top: 0.3rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* ── BODY LOAD ANIMATION ── */
+        body {
+            animation: body-fade-in 0.8s ease-out;
+        }
+
+        @keyframes body-fade-in {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ── PREFERS REDUCED MOTION ── */
+        @media (prefers-reduced-motion: reduce) {
+
+            *,
+            *::before,
+            *::after {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ── RESPONSIVE: TABLET ── */
+        @media (max-width: 1024px) and (min-width: 769px) {
+            .hero {
+                grid-template-columns: 1fr 300px;
+                gap: 2rem;
+            }
+
+            .profile-ring {
+                width: 160px;
+                height: 160px;
+            }
+
+            .impact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .projects-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .stat-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        /* ── RESPONSIVE: MOBILE ── */
+        @media (max-width: 768px) {
+            .hamburger {
+                display: flex;
+            }
+
+            .nav-links {
                 display: none;
+            }
+
+            nav {
+                padding: 1rem 1.5rem;
+            }
+
+            .hero {
+                grid-template-columns: 1fr;
+                padding-top: 5rem;
+                gap: 1.5rem;
+                min-height: auto;
+                padding-bottom: 3rem;
+            }
+
+            .hero-image-desktop {
+                display: none;
+            }
+
+            .hero-profile-mobile {
+                display: flex;
+            }
+
+            h1 {
+                font-size: clamp(2rem, 8vw, 3rem);
+            }
+
+            .name-italic {
+                font-size: clamp(1.3rem, 5vw, 2rem);
+            }
+
+            .hero-desc {
+                font-size: 0.82rem;
             }
 
             .impact-grid,
@@ -1168,6 +1502,14 @@
                 grid-template-columns: 1fr;
             }
 
+            .featured-project {
+                padding: 1.25rem;
+            }
+
+            .featured-project .proj-title {
+                font-size: 1rem !important;
+            }
+
             .stack-layout {
                 grid-template-columns: 1fr;
             }
@@ -1177,10 +1519,13 @@
                 border-bottom: 1px solid var(--dim);
                 display: flex;
                 overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
             }
 
             .stack-tab {
                 white-space: nowrap;
+                padding: 0.75rem 1rem;
+                font-size: 0.7rem;
             }
 
             .cursor-glow {
@@ -1189,6 +1534,86 @@
 
             .scroll-progress {
                 display: none;
+            }
+
+            section {
+                padding: 3.5rem 0;
+            }
+
+            .wrapper {
+                padding: 0 1.25rem;
+            }
+
+            h2 {
+                font-size: clamp(1.5rem, 6vw, 2rem);
+                margin-bottom: 2rem;
+            }
+
+            .connect-grid {
+                gap: 2rem;
+            }
+
+            .gre-badge {
+                display: block;
+            }
+
+            footer {
+                flex-direction: column;
+                gap: 0.75rem;
+                text-align: center;
+            }
+        }
+
+        /* ── RESPONSIVE: SMALL PHONES ── */
+        @media (max-width: 480px) {
+            body {
+                font-size: 13px;
+            }
+
+            .hero {
+                padding-top: 4.5rem;
+            }
+
+            h1 {
+                font-size: 1.8rem;
+            }
+
+            .name-italic {
+                font-size: 1.2rem;
+            }
+
+            .hero-cta {
+                flex-direction: column;
+            }
+
+            .hero-cta .btn {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .hero-profile-mobile img {
+                width: 100px;
+                height: 100px;
+            }
+
+            .stat-num {
+                font-size: 1.5rem;
+            }
+
+            .impact-card {
+                padding: 1.25rem;
+            }
+
+            .proj-card {
+                padding: 1.25rem;
+            }
+
+            .cert-item {
+                padding: 1rem;
+            }
+
+            .terminal-band {
+                padding: 1rem;
             }
         }
     </style>
@@ -1203,68 +1628,77 @@
 
     <nav>
         <div class="nav-logo">APR</div>
-        <div class="nav-links">
+        <div class="nav-links" id="navLinks">
             <a href="#impact">Impact</a>
             <a href="#stack">Stack</a>
             <a href="#projects">Projects</a>
             <a href="#connect">Connect</a>
         </div>
-        <div class="nav-gre">GRE <span>339/340</span></div>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+        </button>
     </nav>
+    <div class="mobile-overlay" id="mobileOverlay">
+        <div class="mobile-nav">
+            <a href="#impact" class="mobile-nav-link">Impact</a>
+            <a href="#stack" class="mobile-nav-link">Stack</a>
+            <a href="#projects" class="mobile-nav-link">Projects</a>
+            <a href="#connect" class="mobile-nav-link">Connect</a>
+        </div>
+    </div>
 
     <div class="wrapper">
         <div class="hero">
             <div>
+                <div class="hero-profile-mobile fade-in delay-1">
+                    <img src="https://avatars.githubusercontent.com/ashwinpr15" alt="Ashwin Pillanda Ravindra" />
+                </div>
                 <div class="hero-eyebrow fade-in delay-1">Data Systems Engineer · TCS · Bengaluru</div>
                 <h1 class="fade-in delay-2">
                     Ashwin
                     <span class="name-italic">Pillanda Ravindra</span>
                 </h1>
                 <p class="hero-desc fade-in delay-3">
-                    I build <strong>data systems that deliver real business impact</strong> — turning messy enterprise
-                    data into forecasting models, cloud pipelines, and BI platforms that executives actually trust.
-                    Shipping production-ready solutions for <strong>Fortune 500 clients</strong> at Tata Consultancy
+                    I build <strong>data systems that deliver real business impact</strong> — forecasting models,
+                    cloud pipelines, and BI platforms for <strong>Fortune 500 clients</strong> at Tata Consultancy
                     Services.
                 </p>
                 <div class="hero-cta fade-in delay-4">
                     <a href="https://in.linkedin.com/in/prashwin" class="btn btn-primary" target="_blank">↗ LinkedIn</a>
-                    <a href="mailto:ashwinpravindra@gmail.com" class="btn btn-ghost">✉ ashwinpravindra@gmail.com</a>
+                    <a href="mailto:ashwinpravindra@gmail.com" class="btn btn-ghost">✉ Email Me</a>
                 </div>
                 <div class="award-badge fade-in delay-5">
                     🏆 &nbsp; 6× Star of the Month · TCS · 2021–2025
                 </div>
             </div>
 
-            <div class="stat-panel fade-in delay-3">
-                <div class="stat-grid">
-                    <div class="stat-item">
-                        <span class="stat-num">~20%</span>
-                        <div class="stat-label">Logistics Cost Reduction</div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-num orange">20%</span>
-                        <div class="stat-label">Churn Rate Reduced</div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-num purple">30%</span>
-                        <div class="stat-label">Faster Data Processing</div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-num white">4+</span>
-                        <div class="stat-label">Fortune 500 Clients</div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-num">99.9%</span>
-                        <div class="stat-label">Data Availability SLA</div>
-                    </div>
-                    <div class="stat-item">
-                        <span class="stat-num orange">4–6wk</span>
-                        <div class="stat-label">Forecast Horizon</div>
-                    </div>
+            <div class="hero-image-desktop fade-in delay-3">
+                <div class="profile-ring">
+                    <img src="https://avatars.githubusercontent.com/ashwinpr15" alt="Ashwin Pillanda Ravindra" />
                 </div>
-                <div class="stat-panel-footer">
-                    <div class="pulse"></div>
-                    Production · Verified via internal delivery records
+                <div class="stat-panel">
+                    <div class="stat-grid">
+                        <div class="stat-item">
+                            <span class="stat-num">~20%</span>
+                            <div class="stat-label">Logistics Cost Cut</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num orange">15-20%</span>
+                            <div class="stat-label">Forecast Accuracy ↑</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num purple">30%</span>
+                            <div class="stat-label">Faster Processing</div>
+                        </div>
+                        <div class="stat-item">
+                            <span class="stat-num white">3+</span>
+                            <div class="stat-label">Fortune 500 Clients</div>
+                        </div>
+                    </div>
+                    <div class="stat-panel-footer">
+                        <div class="pulse"></div>
+                        Production · Verified
+                    </div>
                 </div>
             </div>
         </div>
@@ -1275,20 +1709,18 @@
             <span class="terminal-item">FORECAST_ACC <span>+15–20%</span></span>
             <span class="terminal-item">LOGISTICS_OVERHEAD <span>↓20%</span></span>
             <span class="terminal-item">DATA_PROCESSING <span>30% FASTER</span></span>
-            <span class="terminal-item">CHURN_RATE <span>↓20%</span></span>
             <span class="terminal-item">DATA_AVAILABILITY <span>99.9%</span></span>
             <span class="terminal-item">GRE_SCORE <span>339/340</span></span>
             <span class="terminal-item">CERTIFICATIONS <span>4 ACTIVE</span></span>
-            <span class="terminal-item">CLIENTS <span>STELLANTIS · SAMSUNG · BOSCH · KPMG</span></span>
+            <span class="terminal-item">CLIENTS <span>STELLANTIS · SAMSUNG · BOSCH</span></span>
             <span class="terminal-item">GRAD_START <span>FALL 2026</span></span>
             <span class="terminal-item">FORECAST_ACC <span>+15–20%</span></span>
             <span class="terminal-item">LOGISTICS_OVERHEAD <span>↓20%</span></span>
             <span class="terminal-item">DATA_PROCESSING <span>30% FASTER</span></span>
-            <span class="terminal-item">CHURN_RATE <span>↓20%</span></span>
             <span class="terminal-item">DATA_AVAILABILITY <span>99.9%</span></span>
             <span class="terminal-item">GRE_SCORE <span>339/340</span></span>
             <span class="terminal-item">CERTIFICATIONS <span>4 ACTIVE</span></span>
-            <span class="terminal-item">CLIENTS <span>STELLANTIS · SAMSUNG · BOSCH · KPMG</span></span>
+            <span class="terminal-item">CLIENTS <span>STELLANTIS · SAMSUNG · BOSCH</span></span>
             <span class="terminal-item">GRAD_START <span>FALL 2026</span></span>
         </div>
     </div>
@@ -1302,35 +1734,24 @@
                 <div class="impact-card">
                     <div class="impact-client">Stellantis NV · Global Logistics</div>
                     <div class="impact-title">Supply Chain Optimization Dashboard</div>
-                    <div class="impact-desc">Real-time Power BI dashboard integrated with Azure SQL monitoring global
-                        logistics operations across multiple regions — giving executives live operational visibility.
-                    </div>
-                    <span class="impact-metric"><span class="num">~20%</span> reduction in annual logistics
-                        overhead</span>
+                    <div class="impact-desc">Real-time Power BI dashboards providing executives with live visibility
+                        into global logistics operations.</div>
+                    <span class="impact-metric"><span class="num">~20%</span> reduction in logistics overhead</span>
                 </div>
 
                 <div class="impact-card orange">
-                    <div class="impact-client">Samsung & Bosch · Supply Chain</div>
+                    <div class="impact-client">Samsung & BGSW (Bosch) · Supply Chain</div>
                     <div class="impact-title">Demand Forecasting Model</div>
-                    <div class="impact-desc">Random Forest and Gradient Boosting models to forecast inventory demand 4–6
-                        weeks out, built directly with supply chain managers to encode business constraints.</div>
+                    <div class="impact-desc">ML-driven inventory forecasting built collaboratively with supply chain
+                        managers for 4–6 week planning horizons.</div>
                     <span class="impact-metric"><span class="num">15–20%</span> improvement in forecast accuracy</span>
                 </div>
 
                 <div class="impact-card purple">
-                    <div class="impact-client">KPMG · Customer Intelligence</div>
-                    <div class="impact-title">Customer Retention Analytics</div>
-                    <div class="impact-desc">Decision tree model to predict customer churn risk and identify retention
-                        opportunities, enabling targeted interventions across client segments.</div>
-                    <span class="impact-metric"><span class="num">20%</span> reduction in customer churn rates</span>
-                </div>
-
-                <div class="impact-card blue">
                     <div class="impact-client">Multi-Client · Cloud Migration</div>
-                    <div class="impact-title">Cloud Data Migration & ETL Architecture</div>
-                    <div class="impact-desc">Azure Data Factory pipelines migrating legacy on-premises systems to cloud
-                        platforms. Engineered for data quality, reliability, and downstream reporting availability.
-                    </div>
+                    <div class="impact-title">Cloud Data Migration & ETL</div>
+                    <div class="impact-desc">End-to-end cloud migration of legacy systems with robust ETL pipelines
+                        ensuring data quality and reliability.</div>
                     <span class="impact-metric"><span class="num">30%</span> faster processing · <span
                             class="num">99.9%</span> availability</span>
                 </div>
@@ -1367,8 +1788,8 @@
                         </div>
                         <p style="margin-top:1.5rem;font-size:0.78rem;color:var(--muted);line-height:1.8;">
                             Production ML focused on <span style="color:var(--accent)">forecasting and
-                                classification</span>. Models deployed for Stellantis, Samsung, Bosch, and KPMG in live
-                            supply chain and retention systems.
+                                classification</span>. Models deployed for Stellantis, Samsung, and Bosch in live
+                            supply chain systems.
                         </p>
                     </div>
                     <div class="stack-panel" id="tab-bi">
@@ -1421,36 +1842,64 @@
         <div class="wrapper">
             <div class="section-label">Open Source · Research</div>
             <h2>Selected<br />Projects</h2>
+
+            <!-- FEATURED: Capstone Project -->
+            <div class="featured-project">
+                <div class="featured-badge">🎓 ENGINEERING CAPSTONE</div>
+                <div class="featured-content">
+                    <div class="featured-text">
+                        <div class="proj-icon" style="font-size:2rem">🕷️</div>
+                        <div class="proj-title" style="font-size:1.2rem;margin-bottom:0.75rem">Autonomous Quadruped
+                            Robot for Vision-Based Navigation & IoT Monitoring</div>
+                        <div class="proj-desc" style="font-size:0.82rem;margin-bottom:1rem">A four-legged spider bot
+                            with custom Creep Gait locomotion, Computer Vision obstacle avoidance (Canny Edge
+                            Detection), and real-time IoT environmental monitoring — built as a B.E. capstone project.
+                        </div>
+                        <div class="featured-tags">
+                            <span class="chip">Raspberry Pi 4</span>
+                            <span class="chip">OpenCV</span>
+                            <span class="chip">Python</span>
+                            <span class="chip">IoT</span>
+                            <span class="chip">Servo Control</span>
+                            <span class="chip">ThingSpeak</span>
+                        </div>
+                        <a href="https://github.com/ashwinpr15/Autonomous-Quadruped-Robot-for-Vision-Based-Navigation-and-IoT-Monitoring"
+                            class="proj-link" target="_blank" style="margin-top:1.25rem;font-size:0.78rem">↗ View on
+                            GitHub</a>
+                    </div>
+                </div>
+            </div>
+
             <div class="projects-grid">
 
                 <div class="proj-card">
                     <div class="proj-icon">🎙️</div>
-                    <div class="proj-title">Audio Signal Enhancement via Deep Learning</div>
-                    <div class="proj-desc">Denoising autoencoder (TensorFlow/Keras) to clean unstructured audio for
-                        downstream analytics. Built during IISc internship.</div>
-                    <div class="proj-metric">+11.7 dB SNR over baseline</div>
+                    <div class="proj-title">Audio Signal Enhancement</div>
+                    <div class="proj-desc">Deep learning denoising autoencoder for cleaning unstructured audio signals.
+                        Built during IISc internship.</div>
+                    <div class="proj-metric">+11.7 dB SNR improvement</div>
                     <a href="https://github.com/ashwinpr15/audio-signal-enhancement" class="proj-link" target="_blank">↗
-                        github.com</a>
+                        GitHub</a>
                 </div>
 
                 <div class="proj-card">
                     <div class="proj-icon">🏥</div>
                     <div class="proj-title">Healthcare Diagnostic Hub</div>
-                    <div class="proj-desc">Ensemble ML models predicting diabetes and cancer risk from clinical
-                        datasets. Focus on handling class imbalance with SMOTE and Explainable AI.</div>
+                    <div class="proj-desc">Ensemble ML models for diabetes and cancer risk prediction with advanced
+                        class balancing techniques.</div>
                     <div class="proj-metric">+21% accuracy over baseline</div>
                     <a href="https://github.com/ashwinpr15/healthcare-diagnostic-hub" class="proj-link"
-                        target="_blank">↗ github.com</a>
+                        target="_blank">↗ GitHub</a>
                 </div>
 
                 <div class="proj-card">
                     <div class="proj-icon">🛡️</div>
                     <div class="proj-title">Network Security Analytics</div>
-                    <div class="proj-desc">CNN-based intrusion detection system on NSL-KDD dataset classifying network
-                        attack patterns. Reduces false positives in enterprise security monitoring.</div>
+                    <div class="proj-desc">CNN-based intrusion detection system for classifying network attack patterns
+                        in enterprise environments.</div>
                     <div class="proj-metric">98% detection accuracy</div>
                     <a href="https://github.com/ashwinpr15/network-security-analytics" class="proj-link"
-                        target="_blank">↗ github.com</a>
+                        target="_blank">↗ GitHub</a>
                 </div>
 
             </div>
@@ -1502,14 +1951,15 @@
                 <div>
                     <div class="connect-bio">
                         I'm seeking graduate programs in <strong>Business Analytics, Information Systems, or
-                            MIS</strong> starting Fall 2026. My background bridges the gap between <strong>technical
-                            execution and strategic business thinking</strong> — I don't just build models, I build
-                        systems that move the needle for executives.<br /><br />
-                        GRE <strong>339/340</strong> (Q:169 · V:170). Four years of production enterprise data work.
-                        Ready to contribute to research and peer learning from day one.
+                            MIS</strong> starting Fall 2026. My background bridges <strong>technical
+                            execution and strategic business thinking</strong> — I build systems that move the needle
+                        for executives.
                     </div>
-                    <br />
-                    <div style="font-size:0.72rem;color:var(--muted);line-height:2;">
+                    <div class="gre-badge">
+                        <div class="gre-score">339<span>/340</span></div>
+                        <div class="gre-detail">GRE &nbsp;·&nbsp; Q: 169 &nbsp;·&nbsp; V: 170</div>
+                    </div>
+                    <div style="font-size:0.72rem;color:var(--muted);line-height:2;margin-top:1rem;">
                         <div>📍 Bengaluru, India</div>
                         <div>🏢 Analytics Engineering Lead · TCS</div>
                         <div>🎓 Targeting MS BA / MIS / IS Programs</div>
@@ -1561,6 +2011,23 @@
             document.getElementById('tab-' + id).classList.add('active');
         }
 
+        // ── Hamburger menu ──
+        const hamburger = document.getElementById('hamburger');
+        const mobileOverlay = document.getElementById('mobileOverlay');
+        function toggleMenu() {
+            hamburger.classList.toggle('active');
+            mobileOverlay.classList.toggle('active');
+            document.body.style.overflow = mobileOverlay.classList.contains('active') ? 'hidden' : '';
+        }
+        hamburger.addEventListener('click', toggleMenu);
+        document.querySelectorAll('.mobile-nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                mobileOverlay.classList.remove('active');
+                document.body.style.overflow = '';
+            });
+        });
+
         // ── Cursor glow ──
         const glow = document.getElementById('cursorGlow');
         let mouseInPage = false;
@@ -1583,11 +2050,7 @@
             const docH = document.documentElement.scrollHeight - window.innerHeight;
             const pct = docH > 0 ? (scrollY / docH) * 100 : 0;
             progressBar.style.width = pct + '%';
-
-            // nav shrink
             nav.classList.toggle('scrolled', scrollY > 60);
-
-            // active nav link
             let current = '';
             sections.forEach(s => {
                 if (scrollY >= s.offsetTop - 200) current = s.id;
@@ -1609,9 +2072,8 @@
             });
         }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
 
-        document.querySelectorAll('.impact-card, .proj-card, .cert-item, .connect-link, .section-label, h2').forEach((el, i) => {
+        document.querySelectorAll('.impact-card, .proj-card, .cert-item, .connect-link, .section-label, h2, .featured-project, .gre-badge').forEach((el, i) => {
             el.classList.add('reveal');
-            // stagger within groups
             const siblings = el.parentElement ? Array.from(el.parentElement.children).filter(c => c.classList.contains(el.classList[0])) : [];
             const idx = siblings.indexOf(el);
             el.style.transitionDelay = (idx >= 0 ? idx * 0.08 : 0) + 's';
