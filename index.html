@@ -4,6 +4,8 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description"
+        content="Ashwin Pillanda Ravindra — Data Systems Engineer at TCS building forecasting models, cloud pipelines, and BI platforms for Fortune 500 clients. GRE 339/340. Seeking MS programs Fall 2026." />
     <title>Ashwin Pillanda Ravindra — Data Systems Engineer</title>
     <link
         href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=IBM+Plex+Mono:wght@300;400;500&family=Libre+Baskerville:ital,wght@0,400;1,400&display=swap"
@@ -23,6 +25,30 @@
             --glow: 0 0 40px rgba(0, 210, 190, 0.15);
             --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
             --ease-spring: cubic-bezier(0.34, 1.56, 0.64, 1);
+            --nav-bg: rgba(8, 11, 15, 0.8);
+            --nav-bg-scrolled: rgba(8, 11, 15, 0.92);
+            --overlay-bg: rgba(8, 11, 15, 0.96);
+            --noise-opacity: 0.35;
+            --scanline-color: rgba(0, 0, 0, 0.03);
+        }
+
+        [data-theme="light"] {
+            --bg: #f8fafc;
+            --surface: #ffffff;
+            --surface2: #f1f5f9;
+            --border: rgba(0, 152, 138, 0.18);
+            --accent: #00988a;
+            --accent2: #e05520;
+            --accent3: #7c3aed;
+            --text: #0f172a;
+            --muted: #475569;
+            --dim: #e2e8f0;
+            --glow: 0 0 40px rgba(0, 152, 138, 0.1);
+            --nav-bg: rgba(248, 250, 252, 0.85);
+            --nav-bg-scrolled: rgba(248, 250, 252, 0.95);
+            --overlay-bg: rgba(67, 70, 73, 0.96);
+            --noise-opacity: 0.08;
+            --scanline-color: rgba(0, 0, 0, 0.015);
         }
 
         *,
@@ -35,6 +61,7 @@
 
         html {
             scroll-behavior: smooth;
+            transition: background-color 0.4s ease, color 0.4s ease;
         }
 
         body {
@@ -53,14 +80,14 @@
             background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.04'/%3E%3C/svg%3E");
             pointer-events: none;
             z-index: 0;
-            opacity: 0.35;
+            opacity: var(--noise-opacity);
         }
 
         body::after {
             content: '';
             position: fixed;
             inset: 0;
-            background: repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0, 0, 0, 0.03) 2px, rgba(0, 0, 0, 0.03) 4px);
+            background: repeating-linear-gradient(0deg, transparent, transparent 2px, var(--scanline-color) 2px, var(--scanline-color) 4px);
             pointer-events: none;
             z-index: 0;
         }
@@ -147,7 +174,7 @@
             display: flex;
             justify-content: space-between;
             align-items: center;
-            background: rgba(8, 11, 15, 0.8);
+            background: var(--nav-bg);
             backdrop-filter: blur(20px) saturate(1.4);
             -webkit-backdrop-filter: blur(20px) saturate(1.4);
             border-bottom: 1px solid var(--border);
@@ -156,7 +183,7 @@
 
         nav.scrolled {
             padding: 0.8rem 2rem;
-            background: rgba(8, 11, 15, 0.92);
+            background: var(--nav-bg-scrolled);
         }
 
         /* ── SCROLL PROGRESS ── */
@@ -1147,6 +1174,28 @@
             box-shadow: 0 0 16px rgba(255, 107, 53, 0.1);
         }
 
+        /* ── THEME TOGGLE ── */
+        .theme-toggle {
+            background: none;
+            border: 1px solid var(--dim);
+            cursor: pointer;
+            font-size: 1.1rem;
+            padding: 0.35rem 0.6rem;
+            border-radius: 4px;
+            color: var(--muted);
+            transition: all 0.3s var(--ease-out-expo);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        .theme-toggle:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+            box-shadow: 0 0 12px rgba(0, 210, 190, 0.15);
+        }
+
         /* ── HAMBURGER MENU ── */
         .hamburger {
             display: none;
@@ -1186,7 +1235,7 @@
         .mobile-overlay {
             position: fixed;
             inset: 0;
-            background: rgba(8, 11, 15, 0.96);
+            background: var(--overlay-bg);
             backdrop-filter: blur(24px);
             -webkit-backdrop-filter: blur(24px);
             z-index: 99;
@@ -1423,6 +1472,11 @@
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
             }
+
+            .terminal-scroll {
+                animation-duration: 30s !important;
+                animation-iteration-count: infinite !important;
+            }
         }
 
         /* ── RESPONSIVE: TABLET ── */
@@ -1634,6 +1688,7 @@
             <a href="#projects">Projects</a>
             <a href="#connect">Connect</a>
         </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle light/dark mode">🌓</button>
         <button class="hamburger" id="hamburger" aria-label="Menu">
             <span></span><span></span><span></span>
         </button>
@@ -1647,351 +1702,374 @@
         </div>
     </div>
 
-    <div class="wrapper">
-        <div class="hero">
-            <div>
-                <div class="hero-profile-mobile fade-in delay-1">
-                    <img src="https://avatars.githubusercontent.com/ashwinpr15" alt="Ashwin Pillanda Ravindra" />
-                </div>
-                <div class="hero-eyebrow fade-in delay-1">Data Systems Engineer · TCS · Bengaluru</div>
-                <h1 class="fade-in delay-2">
-                    Ashwin
-                    <span class="name-italic">Pillanda Ravindra</span>
-                </h1>
-                <p class="hero-desc fade-in delay-3">
-                    I build <strong>data systems that deliver real business impact</strong> — forecasting models,
-                    cloud pipelines, and BI platforms for <strong>Fortune 500 clients</strong> at Tata Consultancy
-                    Services.
-                </p>
-                <div class="hero-cta fade-in delay-4">
-                    <a href="https://in.linkedin.com/in/prashwin" class="btn btn-primary" target="_blank">↗ LinkedIn</a>
-                    <a href="mailto:ashwinpravindra@gmail.com" class="btn btn-ghost">✉ Email Me</a>
-                </div>
-                <div class="award-badge fade-in delay-5">
-                    🏆 &nbsp; 6× Star of the Month · TCS · 2021–2025
-                </div>
-            </div>
-
-            <div class="hero-image-desktop fade-in delay-3">
-                <div class="profile-ring">
-                    <img src="https://avatars.githubusercontent.com/ashwinpr15" alt="Ashwin Pillanda Ravindra" />
-                </div>
-                <div class="stat-panel">
-                    <div class="stat-grid">
-                        <div class="stat-item">
-                            <span class="stat-num">~20%</span>
-                            <div class="stat-label">Logistics Cost Cut</div>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-num orange">15-20%</span>
-                            <div class="stat-label">Forecast Accuracy ↑</div>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-num purple">30%</span>
-                            <div class="stat-label">Faster Processing</div>
-                        </div>
-                        <div class="stat-item">
-                            <span class="stat-num white">3+</span>
-                            <div class="stat-label">Fortune 500 Clients</div>
-                        </div>
-                    </div>
-                    <div class="stat-panel-footer">
-                        <div class="pulse"></div>
-                        Production · Verified
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="terminal-band">
-        <div class="terminal-scroll">
-            <span class="terminal-item">FORECAST_ACC <span>+15–20%</span></span>
-            <span class="terminal-item">LOGISTICS_OVERHEAD <span>↓20%</span></span>
-            <span class="terminal-item">DATA_PROCESSING <span>30% FASTER</span></span>
-            <span class="terminal-item">DATA_AVAILABILITY <span>99.9%</span></span>
-            <span class="terminal-item">GRE_SCORE <span>339/340</span></span>
-            <span class="terminal-item">CERTIFICATIONS <span>4 ACTIVE</span></span>
-            <span class="terminal-item">CLIENTS <span>STELLANTIS · SAMSUNG · BOSCH</span></span>
-            <span class="terminal-item">GRAD_START <span>FALL 2026</span></span>
-            <span class="terminal-item">FORECAST_ACC <span>+15–20%</span></span>
-            <span class="terminal-item">LOGISTICS_OVERHEAD <span>↓20%</span></span>
-            <span class="terminal-item">DATA_PROCESSING <span>30% FASTER</span></span>
-            <span class="terminal-item">DATA_AVAILABILITY <span>99.9%</span></span>
-            <span class="terminal-item">GRE_SCORE <span>339/340</span></span>
-            <span class="terminal-item">CERTIFICATIONS <span>4 ACTIVE</span></span>
-            <span class="terminal-item">CLIENTS <span>STELLANTIS · SAMSUNG · BOSCH</span></span>
-            <span class="terminal-item">GRAD_START <span>FALL 2026</span></span>
-        </div>
-    </div>
-
-    <section id="impact">
+    <main>
         <div class="wrapper">
-            <div class="section-label">Production Impact · 2021–2025</div>
-            <h2>Enterprise Delivery,<br />Measurable Results</h2>
-            <div class="impact-grid">
-
-                <div class="impact-card">
-                    <div class="impact-client">Stellantis NV · Global Logistics</div>
-                    <div class="impact-title">Supply Chain Optimization Dashboard</div>
-                    <div class="impact-desc">Real-time Power BI dashboards providing executives with live visibility
-                        into global logistics operations.</div>
-                    <span class="impact-metric"><span class="num">~20%</span> reduction in logistics overhead</span>
-                </div>
-
-                <div class="impact-card orange">
-                    <div class="impact-client">Samsung & BGSW (Bosch) · Supply Chain</div>
-                    <div class="impact-title">Demand Forecasting Model</div>
-                    <div class="impact-desc">ML-driven inventory forecasting built collaboratively with supply chain
-                        managers for 4–6 week planning horizons.</div>
-                    <span class="impact-metric"><span class="num">15–20%</span> improvement in forecast accuracy</span>
-                </div>
-
-                <div class="impact-card purple">
-                    <div class="impact-client">Multi-Client · Cloud Migration</div>
-                    <div class="impact-title">Cloud Data Migration & ETL</div>
-                    <div class="impact-desc">End-to-end cloud migration of legacy systems with robust ETL pipelines
-                        ensuring data quality and reliability.</div>
-                    <span class="impact-metric"><span class="num">30%</span> faster processing · <span
-                            class="num">99.9%</span> availability</span>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section id="stack">
-        <div class="wrapper">
-            <div class="section-label">Technical Toolkit</div>
-            <h2>Stack by<br />Problem Domain</h2>
-            <div class="stack-layout">
-                <div class="stack-nav">
-                    <button class="stack-tab active" onclick="showTab('ml')">Data Science & ML</button>
-                    <button class="stack-tab" onclick="showTab('bi')">Business Intelligence</button>
-                    <button class="stack-tab" onclick="showTab('eng')">Data Engineering</button>
-                    <button class="stack-tab" onclick="showTab('cloud')">Cloud & DevOps</button>
-                </div>
-                <div class="stack-content">
-                    <div class="stack-panel active" id="tab-ml">
-                        <div class="tech-chips">
-                            <span class="chip">Python</span>
-                            <span class="chip">Pandas</span>
-                            <span class="chip">NumPy</span>
-                            <span class="chip">Scikit-learn</span>
-                            <span class="chip">TensorFlow</span>
-                            <span class="chip">XGBoost</span>
-                            <span class="chip">Random Forest</span>
-                            <span class="chip">Gradient Boosting</span>
-                            <span class="chip">R</span>
-                            <span class="chip">SMOTE</span>
-                            <span class="chip">Explainable AI</span>
-                        </div>
-                        <p style="margin-top:1.5rem;font-size:0.78rem;color:var(--muted);line-height:1.8;">
-                            Production ML focused on <span style="color:var(--accent)">forecasting and
-                                classification</span>. Models deployed for Stellantis, Samsung, and Bosch in live
-                            supply chain systems.
-                        </p>
+            <div class="hero">
+                <div>
+                    <div class="hero-profile-mobile fade-in delay-1">
+                        <img src="https://avatars.githubusercontent.com/ashwinpr15" alt="Ashwin Pillanda Ravindra" />
                     </div>
-                    <div class="stack-panel" id="tab-bi">
-                        <div class="tech-chips">
-                            <span class="chip">Power BI</span>
-                            <span class="chip">Tableau</span>
-                            <span class="chip">Qlik</span>
-                            <span class="chip">DAX</span>
-                            <span class="chip">Advanced Excel</span>
-                            <span class="chip">Microsoft Fabric</span>
-                        </div>
-                        <p style="margin-top:1.5rem;font-size:0.78rem;color:var(--muted);line-height:1.8;">
-                            Performance-first DAX and executive-grade dashboards. Built for <span
-                                style="color:var(--accent)">decision-makers who need instant clarity</span>, not data
-                            scientists who need raw tables.
-                        </p>
+                    <div class="hero-eyebrow fade-in delay-1">Data Systems Engineer · TCS · Bengaluru</div>
+                    <h1 class="fade-in delay-2">
+                        Ashwin
+                        <span class="name-italic">Pillanda Ravindra</span>
+                    </h1>
+                    <p class="hero-desc fade-in delay-3">
+                        I build <strong>data systems that deliver real business impact</strong> — forecasting models,
+                        cloud pipelines, and BI platforms for <strong>Fortune 500 clients</strong> at Tata Consultancy
+                        Services.
+                    </p>
+                    <div class="hero-cta fade-in delay-4">
+                        <a href="https://in.linkedin.com/in/prashwin" class="btn btn-primary" target="_blank">↗
+                            LinkedIn</a>
+                        <a href="mailto:ashwinpravindra@gmail.com" class="btn btn-ghost">✉ Email Me</a>
                     </div>
-                    <div class="stack-panel" id="tab-eng">
-                        <div class="tech-chips">
-                            <span class="chip">Azure Data Factory</span>
-                            <span class="chip">PySpark</span>
-                            <span class="chip">Snowflake</span>
-                            <span class="chip">BigQuery</span>
-                            <span class="chip">SQL Server</span>
-                            <span class="chip">Azure Synapse</span>
-                            <span class="chip">Microsoft Fabric</span>
-                            <span class="chip">Azure SQL</span>
-                        </div>
-                        <p style="margin-top:1.5rem;font-size:0.78rem;color:var(--muted);line-height:1.8;">
-                            Scalable ETL pipelines from legacy on-prem to cloud-native platforms. Engineered for <span
-                                style="color:var(--accent)">99.9% availability</span> and 30% faster throughput.
-                        </p>
+                    <div class="award-badge fade-in delay-5">
+                        🏆 &nbsp; 6× Star of the Month · TCS · 2021–2025
                     </div>
-                    <div class="stack-panel" id="tab-cloud">
-                        <div class="tech-chips">
-                            <span class="chip">Azure Ecosystem</span>
-                            <span class="chip">Git</span>
+                </div>
+
+                <div class="hero-image-desktop fade-in delay-3">
+                    <div class="profile-ring">
+                        <img src="https://avatars.githubusercontent.com/ashwinpr15" alt="Ashwin Pillanda Ravindra" />
+                    </div>
+                    <div class="stat-panel">
+                        <div class="stat-grid">
+                            <div class="stat-item">
+                                <span class="stat-num">~20%</span>
+                                <div class="stat-label">Logistics Cost Cut</div>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num orange">15-20%</span>
+                                <div class="stat-label">Forecast Accuracy ↑</div>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num purple">30%</span>
+                                <div class="stat-label">Faster Processing</div>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-num white">3+</span>
+                                <div class="stat-label">Fortune 500 Clients</div>
+                            </div>
                         </div>
-                        <p style="margin-top:1.5rem;font-size:0.78rem;color:var(--muted);line-height:1.8;">
-                            Operating principle: choose tools that <span style="color:var(--accent)">deliver production
-                                results at scale</span>, prioritizing business impact over resume appeal.
-                        </p>
+                        <div class="stat-panel-footer">
+                            <div class="pulse"></div>
+                            Production · Verified
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-    <section id="projects">
-        <div class="wrapper">
-            <div class="section-label">Open Source · Research</div>
-            <h2>Selected<br />Projects</h2>
+        <div class="terminal-band">
+            <div class="terminal-scroll">
+                <span class="terminal-item">FORECAST_ACC <span>+15–20%</span></span>
+                <span class="terminal-item">LOGISTICS_OVERHEAD <span>↓20%</span></span>
+                <span class="terminal-item">DATA_PROCESSING <span>30% FASTER</span></span>
+                <span class="terminal-item">DATA_AVAILABILITY <span>99.9%</span></span>
+                <span class="terminal-item">GRE_SCORE <span>339/340</span></span>
+                <span class="terminal-item">CERTIFICATIONS <span>4 ACTIVE</span></span>
+                <span class="terminal-item">CLIENTS <span>STELLANTIS · SAMSUNG · BOSCH</span></span>
+                <span class="terminal-item">GRAD_START <span>FALL 2026</span></span>
+                <span class="terminal-item">FORECAST_ACC <span>+15–20%</span></span>
+                <span class="terminal-item">LOGISTICS_OVERHEAD <span>↓20%</span></span>
+                <span class="terminal-item">DATA_PROCESSING <span>30% FASTER</span></span>
+                <span class="terminal-item">DATA_AVAILABILITY <span>99.9%</span></span>
+                <span class="terminal-item">GRE_SCORE <span>339/340</span></span>
+                <span class="terminal-item">CERTIFICATIONS <span>4 ACTIVE</span></span>
+                <span class="terminal-item">CLIENTS <span>STELLANTIS · SAMSUNG · BOSCH</span></span>
+                <span class="terminal-item">GRAD_START <span>FALL 2026</span></span>
+            </div>
+        </div>
 
-            <!-- FEATURED: Capstone Project -->
-            <div class="featured-project">
-                <div class="featured-badge">🎓 ENGINEERING CAPSTONE</div>
-                <div class="featured-content">
-                    <div class="featured-text">
-                        <div class="proj-icon" style="font-size:2rem">🕷️</div>
-                        <div class="proj-title" style="font-size:1.2rem;margin-bottom:0.75rem">Autonomous Quadruped
-                            Robot for Vision-Based Navigation & IoT Monitoring</div>
-                        <div class="proj-desc" style="font-size:0.82rem;margin-bottom:1rem">A four-legged spider bot
-                            with custom Creep Gait locomotion, Computer Vision obstacle avoidance (Canny Edge
-                            Detection), and real-time IoT environmental monitoring — built as a B.E. capstone project.
+        <section id="impact">
+            <div class="wrapper">
+                <div class="section-label">Production Impact · 2021–2025</div>
+                <h2>Enterprise Delivery,<br />Measurable Results</h2>
+                <div class="impact-grid">
+
+                    <div class="impact-card">
+                        <div class="impact-client">Stellantis NV · Global Logistics</div>
+                        <div class="impact-title">Supply Chain Optimization Dashboard</div>
+                        <div class="impact-desc">Real-time Power BI dashboards providing executives with live visibility
+                            into global logistics operations.</div>
+                        <span class="impact-metric"><span class="num">~20%</span> reduction in logistics overhead</span>
+                    </div>
+
+                    <div class="impact-card orange">
+                        <div class="impact-client">Samsung & BGSW (Bosch) · Supply Chain</div>
+                        <div class="impact-title">Demand Forecasting Model</div>
+                        <div class="impact-desc">ML-driven inventory forecasting built collaboratively with supply chain
+                            managers for 4–6 week planning horizons.</div>
+                        <span class="impact-metric"><span class="num">15–20%</span> improvement in forecast
+                            accuracy</span>
+                    </div>
+
+                    <div class="impact-card purple">
+                        <div class="impact-client">Multi-Client · Cloud Migration</div>
+                        <div class="impact-title">Cloud Data Migration & ETL</div>
+                        <div class="impact-desc">End-to-end cloud migration of legacy systems with robust ETL pipelines
+                            ensuring data quality and reliability.</div>
+                        <span class="impact-metric"><span class="num">30%</span> faster processing · <span
+                                class="num">99.9%</span> availability</span>
+                    </div>
+
+                    <div class="impact-card blue">
+                        <div class="impact-client">2017 – 2021</div>
+                        <div class="impact-title">B.E. in Electronics & Communication</div>
+                        <div class="impact-desc">SDM Institute of Technology (SDM IT), Ujire — Visvesvaraya
+                            Technological
+                            University</div>
+                        <span class="impact-metric"><span class="num">VTU</span> · Karnataka</span>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+        <section id="stack">
+            <div class="wrapper">
+                <div class="section-label">Technical Toolkit</div>
+                <h2>Stack by<br />Problem Domain</h2>
+                <div class="stack-layout">
+                    <div class="stack-nav">
+                        <button class="stack-tab active" data-tab="ml">Data Science & ML</button>
+                        <button class="stack-tab" data-tab="bi">Business Intelligence</button>
+                        <button class="stack-tab" data-tab="eng">Data Engineering</button>
+                        <button class="stack-tab" data-tab="cloud">Cloud & DevOps</button>
+                    </div>
+                    <div class="stack-content">
+                        <div class="stack-panel active" id="tab-ml">
+                            <div class="tech-chips">
+                                <span class="chip">Python</span>
+                                <span class="chip">Pandas</span>
+                                <span class="chip">NumPy</span>
+                                <span class="chip">Scikit-learn</span>
+                                <span class="chip">TensorFlow</span>
+                                <span class="chip">XGBoost</span>
+                                <span class="chip">Random Forest</span>
+                                <span class="chip">Gradient Boosting</span>
+                                <span class="chip">R</span>
+                                <span class="chip">SMOTE</span>
+                                <span class="chip">Explainable AI</span>
+                            </div>
+                            <p style="margin-top:1.5rem;font-size:0.78rem;color:var(--muted);line-height:1.8;">
+                                Production ML focused on <span style="color:var(--accent)">forecasting and
+                                    classification</span>. Models deployed for Stellantis, Samsung, and Bosch in live
+                                supply chain systems.
+                            </p>
                         </div>
-                        <div class="featured-tags">
-                            <span class="chip">Raspberry Pi 4</span>
-                            <span class="chip">OpenCV</span>
-                            <span class="chip">Python</span>
-                            <span class="chip">IoT</span>
-                            <span class="chip">Servo Control</span>
-                            <span class="chip">ThingSpeak</span>
+                        <div class="stack-panel" id="tab-bi">
+                            <div class="tech-chips">
+                                <span class="chip">Power BI</span>
+                                <span class="chip">Tableau</span>
+                                <span class="chip">Qlik</span>
+                                <span class="chip">DAX</span>
+                                <span class="chip">Advanced Excel</span>
+                                <span class="chip">Microsoft Fabric</span>
+                            </div>
+                            <p style="margin-top:1.5rem;font-size:0.78rem;color:var(--muted);line-height:1.8;">
+                                Performance-first DAX and executive-grade dashboards. Built for <span
+                                    style="color:var(--accent)">decision-makers who need instant clarity</span>, not
+                                data
+                                scientists who need raw tables.
+                            </p>
                         </div>
-                        <a href="https://github.com/ashwinpr15/Autonomous-Quadruped-Robot-for-Vision-Based-Navigation-and-IoT-Monitoring"
-                            class="proj-link" target="_blank" style="margin-top:1.25rem;font-size:0.78rem">↗ View on
+                        <div class="stack-panel" id="tab-eng">
+                            <div class="tech-chips">
+                                <span class="chip">Azure Data Factory</span>
+                                <span class="chip">PySpark</span>
+                                <span class="chip">Snowflake</span>
+                                <span class="chip">BigQuery</span>
+                                <span class="chip">SQL Server</span>
+                                <span class="chip">Azure Synapse</span>
+                                <span class="chip">Microsoft Fabric</span>
+                                <span class="chip">Azure SQL</span>
+                            </div>
+                            <p style="margin-top:1.5rem;font-size:0.78rem;color:var(--muted);line-height:1.8;">
+                                Scalable ETL pipelines from legacy on-prem to cloud-native platforms. Engineered for
+                                <span style="color:var(--accent)">99.9% availability</span> and 30% faster throughput.
+                            </p>
+                        </div>
+                        <div class="stack-panel" id="tab-cloud">
+                            <div class="tech-chips">
+                                <span class="chip">Azure Ecosystem</span>
+                                <span class="chip">Git</span>
+                            </div>
+                            <p style="margin-top:1.5rem;font-size:0.78rem;color:var(--muted);line-height:1.8;">
+                                Operating principle: choose tools that <span style="color:var(--accent)">deliver
+                                    production
+                                    results at scale</span>, prioritizing business impact over resume appeal.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects">
+            <div class="wrapper">
+                <div class="section-label">Open Source · Research</div>
+                <h2>Selected<br />Projects</h2>
+
+                <!-- FEATURED: Capstone Project -->
+                <div class="featured-project">
+                    <div class="featured-badge">🎓 ENGINEERING CAPSTONE</div>
+                    <div class="featured-content">
+                        <div class="featured-text">
+                            <div class="proj-icon" style="font-size:2rem">🕷️</div>
+                            <div class="proj-title" style="font-size:1.2rem;margin-bottom:0.75rem">Autonomous Quadruped
+                                Robot for Vision-Based Navigation & IoT Monitoring</div>
+                            <div class="proj-desc" style="font-size:0.82rem;margin-bottom:1rem">A four-legged spider bot
+                                with custom Creep Gait locomotion, Computer Vision obstacle avoidance (Canny Edge
+                                Detection), and real-time IoT environmental monitoring — built as a B.E. capstone
+                                project.
+                            </div>
+                            <div class="featured-tags">
+                                <span class="chip">Raspberry Pi 4</span>
+                                <span class="chip">OpenCV</span>
+                                <span class="chip">Python</span>
+                                <span class="chip">IoT</span>
+                                <span class="chip">Servo Control</span>
+                                <span class="chip">ThingSpeak</span>
+                            </div>
+                            <a href="https://github.com/ashwinpr15/Autonomous-Quadruped-Robot-for-Vision-Based-Navigation-and-IoT-Monitoring"
+                                class="proj-link" target="_blank" style="margin-top:1.25rem;font-size:0.78rem">↗ View on
+                                GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="projects-grid">
+
+                    <div class="proj-card">
+                        <div class="proj-icon">🎙️</div>
+                        <div class="proj-title">Audio Signal Enhancement</div>
+                        <div class="proj-desc">Deep learning denoising autoencoder for cleaning unstructured audio
+                            signals.
+                            Built during IISc internship.</div>
+                        <div class="proj-metric">+11.7 dB SNR improvement</div>
+                        <a href="https://github.com/ashwinpr15/audio-signal-enhancement" class="proj-link"
+                            target="_blank">↗
                             GitHub</a>
                     </div>
+
+                    <div class="proj-card">
+                        <div class="proj-icon">🏥</div>
+                        <div class="proj-title">Healthcare Diagnostic Hub</div>
+                        <div class="proj-desc">Ensemble ML models for diabetes and cancer risk prediction with advanced
+                            class balancing techniques.</div>
+                        <div class="proj-metric">+21% accuracy over baseline</div>
+                        <a href="https://github.com/ashwinpr15/healthcare-diagnostic-hub" class="proj-link"
+                            target="_blank">↗ GitHub</a>
+                    </div>
+
+                    <div class="proj-card">
+                        <div class="proj-icon">🛡️</div>
+                        <div class="proj-title">Network Security Analytics</div>
+                        <div class="proj-desc">CNN-based intrusion detection system for classifying network attack
+                            patterns
+                            in enterprise environments.</div>
+                        <div class="proj-metric">98% detection accuracy</div>
+                        <a href="https://github.com/ashwinpr15/network-security-analytics" class="proj-link"
+                            target="_blank">↗ GitHub</a>
+                    </div>
+
                 </div>
             </div>
+        </section>
 
-            <div class="projects-grid">
-
-                <div class="proj-card">
-                    <div class="proj-icon">🎙️</div>
-                    <div class="proj-title">Audio Signal Enhancement</div>
-                    <div class="proj-desc">Deep learning denoising autoencoder for cleaning unstructured audio signals.
-                        Built during IISc internship.</div>
-                    <div class="proj-metric">+11.7 dB SNR improvement</div>
-                    <a href="https://github.com/ashwinpr15/audio-signal-enhancement" class="proj-link" target="_blank">↗
-                        GitHub</a>
-                </div>
-
-                <div class="proj-card">
-                    <div class="proj-icon">🏥</div>
-                    <div class="proj-title">Healthcare Diagnostic Hub</div>
-                    <div class="proj-desc">Ensemble ML models for diabetes and cancer risk prediction with advanced
-                        class balancing techniques.</div>
-                    <div class="proj-metric">+21% accuracy over baseline</div>
-                    <a href="https://github.com/ashwinpr15/healthcare-diagnostic-hub" class="proj-link"
-                        target="_blank">↗ GitHub</a>
-                </div>
-
-                <div class="proj-card">
-                    <div class="proj-icon">🛡️</div>
-                    <div class="proj-title">Network Security Analytics</div>
-                    <div class="proj-desc">CNN-based intrusion detection system for classifying network attack patterns
-                        in enterprise environments.</div>
-                    <div class="proj-metric">98% detection accuracy</div>
-                    <a href="https://github.com/ashwinpr15/network-security-analytics" class="proj-link"
-                        target="_blank">↗ GitHub</a>
-                </div>
-
-            </div>
-        </div>
-    </section>
-
-    <section>
-        <div class="wrapper">
-            <div class="section-label">Credentials</div>
-            <h2>Certifications &<br />Recognition</h2>
-            <div class="cert-list">
-                <div class="cert-item">
-                    <div class="cert-icon">🧩</div>
-                    <div>
-                        <div class="cert-name">Microsoft Certified: Fabric Analytics Engineer Associate</div>
-                        <div class="cert-year">2025 · Microsoft</div>
-                    </div>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon">📊</div>
-                    <div>
-                        <div class="cert-name">Microsoft Certified: Power BI Data Analyst Associate</div>
-                        <div class="cert-year">2024 · Microsoft</div>
-                    </div>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon">🐍</div>
-                    <div>
-                        <div class="cert-name">PCEP: Certified Entry-Level Python Programmer</div>
-                        <div class="cert-year">2024 · Python Institute</div>
-                    </div>
-                </div>
-                <div class="cert-item">
-                    <div class="cert-icon">⚡</div>
-                    <div>
-                        <div class="cert-name">Microsoft Certified: Power Platform Developer Associate</div>
-                        <div class="cert-year">2023 · Microsoft</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="connect">
-        <div class="wrapper">
-            <div class="section-label">Grad School · Fall 2026</div>
-            <h2>Let's Connect</h2>
-            <div class="connect-grid">
-                <div>
-                    <div class="connect-bio">
-                        I'm seeking graduate programs in <strong>Business Analytics, Information Systems, or
-                            Information Technology</strong> starting Fall 2026. My background bridges <strong>technical
-                            execution and strategic business thinking</strong> — I build systems that move the needle
-                        for executives.
-                    </div>
-                    <div class="gre-badge">
-                        <div class="gre-score">339<span>/340</span></div>
-                        <div class="gre-detail">GRE &nbsp;·&nbsp; Q: 169 &nbsp;·&nbsp; V: 170</div>
-                    </div>
-                    <div style="font-size:0.72rem;color:var(--muted);line-height:2;margin-top:1rem;">
-                        <div>📍 Bengaluru, India</div>
-                        <div>🏢 Analytics Engineering Lead · TCS</div>
-                        <div>🎓 Targeting MS BA / MIS / IT Programs</div>
-                        <div>📅 Start Date: Fall 2026</div>
-                    </div>
-                </div>
-                <div class="connect-links">
-                    <a href="https://in.linkedin.com/in/prashwin" class="connect-link" target="_blank">
-                        <div class="connect-link-icon">💼</div>
+        <section>
+            <div class="wrapper">
+                <div class="section-label">Credentials</div>
+                <h2>Certifications &<br />Recognition</h2>
+                <div class="cert-list">
+                    <div class="cert-item">
+                        <div class="cert-icon">🧩</div>
                         <div>
-                            <div style="font-weight:500">LinkedIn</div>
-                            <div style="font-size:0.68rem;color:var(--muted)">linkedin.com/in/prashwin</div>
+                            <div class="cert-name">Microsoft Certified: Fabric Analytics Engineer Associate</div>
+                            <div class="cert-year">2025 · Microsoft</div>
                         </div>
-                    </a>
-                    <a href="mailto:ashwinpravindra@gmail.com" class="connect-link">
-                        <div class="connect-link-icon">✉</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">📊</div>
                         <div>
-                            <div style="font-weight:500">Email</div>
-                            <div style="font-size:0.68rem;color:var(--muted)">ashwinpravindra@gmail.com</div>
+                            <div class="cert-name">Microsoft Certified: Power BI Data Analyst Associate</div>
+                            <div class="cert-year">2024 · Microsoft</div>
                         </div>
-                    </a>
-                    <a href="https://github.com/ashwinpr15" class="connect-link" target="_blank">
-                        <div class="connect-link-icon">⌨</div>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">🐍</div>
                         <div>
-                            <div style="font-weight:500">GitHub</div>
-                            <div style="font-size:0.68rem;color:var(--muted)">github.com/ashwinpr15</div>
+                            <div class="cert-name">PCEP: Certified Entry-Level Python Programmer</div>
+                            <div class="cert-year">2024 · Python Institute</div>
                         </div>
-                    </a>
+                    </div>
+                    <div class="cert-item">
+                        <div class="cert-icon">⚡</div>
+                        <div>
+                            <div class="cert-name">Microsoft Certified: Power Platform Developer Associate</div>
+                            <div class="cert-year">2023 · Microsoft</div>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
+
+        <section id="connect">
+            <div class="wrapper">
+                <div class="section-label">Grad School · Fall 2026</div>
+                <h2>Let's Connect</h2>
+                <div class="connect-grid">
+                    <div>
+                        <div class="connect-bio">
+                            I'm seeking graduate programs in <strong>Business Analytics, Information Systems, or
+                                Information Technology</strong> starting Fall 2026. My background bridges
+                            <strong>technical
+                                execution and strategic business thinking</strong> — I build systems that move the
+                            needle
+                            for executives.
+                        </div>
+                        <div class="gre-badge">
+                            <div class="gre-score">339<span>/340</span></div>
+                            <div class="gre-detail">GRE &nbsp;·&nbsp; Q: 169 &nbsp;·&nbsp; V: 170</div>
+                        </div>
+                        <div style="font-size:0.72rem;color:var(--muted);line-height:2;margin-top:1rem;">
+                            <div>📍 Bengaluru, India</div>
+                            <div>🏢 Analytics Engineering Lead · TCS</div>
+                            <div>🎓 Targeting MS BA / MIS / IT Programs</div>
+                            <div>📅 Start Date: Fall 2026</div>
+                        </div>
+                    </div>
+                    <div class="connect-links">
+                        <a href="https://in.linkedin.com/in/prashwin" class="connect-link" target="_blank"
+                            aria-label="LinkedIn Profile">
+                            <div class="connect-link-icon">💼</div>
+                            <div>
+                                <div style="font-weight:500">LinkedIn</div>
+                                <div style="font-size:0.68rem;color:var(--muted)">linkedin.com/in/prashwin</div>
+                            </div>
+                        </a>
+                        <a href="mailto:ashwinpravindra@gmail.com" class="connect-link" aria-label="Email">
+                            <div class="connect-link-icon">✉</div>
+                            <div>
+                                <div style="font-weight:500">Email</div>
+                                <div style="font-size:0.68rem;color:var(--muted)">ashwinpravindra@gmail.com</div>
+                            </div>
+                        </a>
+                        <a href="https://github.com/ashwinpr15" class="connect-link" target="_blank"
+                            aria-label="GitHub Profile">
+                            <div class="connect-link-icon">⌨</div>
+                            <div>
+                                <div style="font-weight:500">GitHub</div>
+                                <div style="font-size:0.68rem;color:var(--muted)">github.com/ashwinpr15</div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <div class="wrapper">
         <footer>
@@ -2001,15 +2079,36 @@
     </div>
 
     <script>
-        // ── Tab switching ──
-        function showTab(id) {
-            document.querySelectorAll('.stack-tab').forEach(t => t.classList.remove('active'));
-            document.querySelectorAll('.stack-panel').forEach(p => p.classList.remove('active'));
-            const tabs = document.querySelectorAll('.stack-tab');
-            const panels = { ml: 0, bi: 1, eng: 2, cloud: 3 };
-            tabs[panels[id]].classList.add('active');
-            document.getElementById('tab-' + id).classList.add('active');
+        // ── Theme Toggle ──
+        const themeBtn = document.getElementById('themeToggle');
+        function applyTheme(theme) {
+            if (theme === 'light') {
+                document.documentElement.setAttribute('data-theme', 'light');
+                themeBtn.textContent = '☀️';
+            } else {
+                document.documentElement.removeAttribute('data-theme');
+                themeBtn.textContent = '🌙';
+            }
         }
+        // Load saved theme
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) applyTheme(savedTheme);
+        themeBtn.addEventListener('click', () => {
+            const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+            const newTheme = isLight ? 'dark' : 'light';
+            applyTheme(newTheme);
+            localStorage.setItem('theme', newTheme);
+        });
+
+        // ── Tab switching (via data-tab attributes) ──
+        document.querySelectorAll('.stack-tab[data-tab]').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelectorAll('.stack-tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.stack-panel').forEach(p => p.classList.remove('active'));
+                tab.classList.add('active');
+                document.getElementById('tab-' + tab.dataset.tab).classList.add('active');
+            });
+        });
 
         // ── Hamburger menu ──
         const hamburger = document.getElementById('hamburger');
