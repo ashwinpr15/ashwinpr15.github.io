@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/banner-dark.svg">
+  <img src="assets/banner-light.svg" alt="Ashwin Pillanda Ravindra portfolio" width="100%">
+</picture>
+
 # Ashwin Pillanda Ravindra portfolio
 
 Static portfolio for BI development, analytics, reporting automation, and data integration. Retains the existing Syne/Libre Baskerville typography, teal palette, portrait, cards, and light/dark themes.
