@@ -2,169 +2,561 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Boston-based BU Questrom MSBA student with approximately five years as a TCS Business Intelligence Developer. Power BI, QlikView migration, SQL, Python automation, and Airflow.">
-<title>Ashwin Pillanda Ravindra | BI Developer and BU MSBA Student</title>
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Ashwin Pillanda Ravindra | BI Developer &amp; BU Questrom MSBA</title>
+<meta name="description" content="Electronics &amp; CS engineer with about five years as a Business Intelligence Developer at TCS, now an MSBA student at Boston University Questrom. Power BI, QlikView, SQL, Snowflake, Azure Data Factory, Python and Airflow.">
 <link rel="canonical" href="https://ashwinpr15.github.io/">
-<meta property="og:title" content="Ashwin Pillanda Ravindra | Business Intelligence and Analytics">
-<meta property="og:description" content="Approximately five years of enterprise BI experience at TCS, 6+ QlikView-to-Power BI application migrations, and current MSBA studies at Boston University.">
+<meta name="theme-color" content="#0a0d12" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#f7f9fb" media="(prefers-color-scheme: light)">
+<meta property="og:title" content="Ashwin Pillanda Ravindra | Business Intelligence &amp; Analytics">
+<meta property="og:description" content="About five years of enterprise BI at TCS, 6+ QlikView to Power BI migrations, and MSBA studies at Boston University Questrom.">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://ashwinpr15.github.io/">
 <meta property="og:image" content="https://ashwinpr15.github.io/assets/portrait.jpg">
 <meta name="twitter:card" content="summary">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%23a78bfa'/%3E%3Cstop offset='.5' stop-color='%2300d2be'/%3E%3Cstop offset='1' stop-color='%23ff8a5c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%230a0d12'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' text-anchor='middle' fill='url(%23g)'%3EAPR%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Syne:wght@600;700;800&amp;family=IBM+Plex+Mono:wght@400;500&amp;family=Libre+Baskerville:ital,wght@1,400&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
 <link rel="stylesheet" href="styles.css">
+<script>
+  // Apply the saved or system theme before first paint.
+  (function () {
+    var t = null;
+    try { t = localStorage.getItem('theme'); } catch (e) {}
+    if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+    document.documentElement.classList.add('js');
+  })();
+</script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
-<nav aria-label="Main navigation"><a class="nav-logo" href="#main" aria-label="Ashwin home">APR</a><div class="nav-links">
-<a href="#about">About</a><a href="#impact">Experience</a><a href="#stack">Skills</a><a href="#projects">Projects</a><a href="#connect">Contact</a>
-</div>
-<button class="theme-toggle" id="themeToggle" aria-label="Switch to light theme">☀</button><button class="hamburger" id="hamburger" aria-label="Open navigation" aria-controls="mobileOverlay" aria-expanded="false"><span></span><span></span><span></span></button></nav>
-<div class="mobile-overlay" id="mobileOverlay" hidden><div class="mobile-nav" aria-label="Mobile navigation">
-<a class="mobile-nav-link" href="#about">About</a><a class="mobile-nav-link" href="#impact">Experience</a><a class="mobile-nav-link" href="#stack">Skills</a><a class="mobile-nav-link" href="#projects">Projects</a><a class="mobile-nav-link" href="#connect">Contact</a>
-</div></div>
-<main id="main" tabindex="-1"><div class="wrapper"><header class="hero"><div>
-<div class="hero-profile-mobile"><img src="assets/portrait.webp" alt="Ashwin Pillanda Ravindra" width="120" height="120"></div>
-<p class="hero-eyebrow">Business Intelligence Developer · BU Questrom MSBA</p>
-<h1>Ashwin <span class="name-italic">Pillanda Ravindra</span>
-</h1>
-<p class="hero-desc">I bring approximately <strong>five years of enterprise BI experience at Tata Consultancy Services</strong>, spanning Power BI, QlikView, data modeling, and reporting automation. I am now an <strong>MSBA student at Boston University’s Questrom School of Business</strong>, based in Boston, MA, USA.</p>
-<p class="hero-meta">TCS · August 2021–August 2026<br>Graduate study sabbatical · MSBA started September 2026</p>
-<div class="hero-cta">
-<a class="btn btn-primary" href="#impact">Explore my experience</a><a class="btn btn-secondary" href="#projects">Review project code</a><a class="btn btn-secondary" href="assets/Ashwin-Resume.pdf" target="_blank" rel="noopener noreferrer">Read my resume ↗</a>
-</div>
-</div>
-<div class="hero-image-desktop">
-<div class="profile-ring"><img src="assets/portrait.webp" alt="Ashwin Pillanda Ravindra" width="200" height="200"></div>
-<p class="project-status">Business intelligence &amp; data</p>
-</div></header></div>
-<section id="about"><div class="wrapper">
-<div class="section-label">Professional focus</div>
-<h2>From data to<br>usable reporting</h2>
-<div class="about-copy">
-<p>As a Business Intelligence Developer at TCS from August 2021 to August 2026, I worked on enterprise BI implementations, Power BI and QlikView development, data modeling, and reporting automation. My client exposure includes Stellantis, Samsung, and Bosch.</p>
-<p>I migrated <strong>6+ applications from QlikView to Power BI</strong> and gained experience with SQL, Snowflake, Azure Data Factory, Python automation, and Airflow DAGs. I am currently on a work sabbatical for graduate studies.</p>
-<p>My public repositories show a separate set of Python and engineering interests, including a documented robotics capstone and focused machine learning demonstrations.</p>
-</div>
-</div></section>
-<section id="impact"><div class="wrapper">
-<div class="section-label">Business Intelligence Developer · TCS · August 2021–August 2026</div>
-<h2>Enterprise BI<br>and data delivery</h2>
-<div class="impact-grid">
-<article class="impact-card"><p class="impact-client">ENTERPRISE REPORTING</p>
-<h3 class="impact-title">BI development and automation</h3>
-<ul>
-<li>Developed enterprise BI solutions with Power BI and QlikView.</li>
-<li>Worked on data modeling and reporting automation.</li>
-<li>Client exposure across Stellantis, Samsung, and Bosch.</li>
-</ul></article><article class="impact-card"><p class="impact-client">BI MODERNIZATION</p>
-<h3 class="impact-title">6+ application migrations</h3>
-<ul>
-<li>Migrated 6+ applications from QlikView to Power BI.</li>
-<li>Worked on data transformation and integration supporting BI delivery.</li>
-</ul></article><article class="impact-card"><p class="impact-client">DATA WORKFLOWS</p>
-<h3 class="impact-title">Integration and orchestration</h3>
-<ul>
-<li>Experience with SQL, Snowflake, and Azure Data Factory.</li>
-<li>Python automation and Airflow DAGs.</li>
-<li>Additional experience with DB2 and Microsoft Fabric.</li>
-</ul></article>
-</div>
-<p class="evidence-note">This section summarizes professional experience. Public project repositories below are independent demonstrations; they do not contain client systems or employer data.</p>
-</div></section>
-<section id="stack"><div class="wrapper">
-<div class="section-label">Technical toolkit</div>
-<h2>Skills in<br>context</h2>
-<div class="stack-layout">
-<div class="stack-nav" role="tablist" aria-label="Skill areas" aria-orientation="vertical">
-<button class="stack-tab active" role="tab" id="skill-bi" aria-controls="tab-bi" aria-selected="true" tabindex="0" data-tab="bi">Business intelligence</button><button class="stack-tab " role="tab" id="skill-data" aria-controls="tab-data" aria-selected="false" tabindex="-1" data-tab="data">Data integration</button><button class="stack-tab " role="tab" id="skill-python" aria-controls="tab-python" aria-selected="false" tabindex="-1" data-tab="python">Python and orchestration</button>
-</div>
-<div class="stack-content">
-<div class="stack-panel" id="tab-bi" role="tabpanel" aria-labelledby="skill-bi" tabindex="0">
-<h3 class="skill-heading">Business intelligence</h3>
-<div class="tech-chips">
-<span class="chip">Power BI</span><span class="chip">QlikView</span><span class="chip">PowerApps</span><span class="chip">Power BI Dataflows</span><span class="chip">Qlik NPrinting</span>
-</div>
-<p>Professional experience in enterprise dashboards, reporting automation, and Qlik-to-Power BI migration.</p>
-</div>
-<div class="stack-panel" id="tab-data" role="tabpanel" aria-labelledby="skill-data" tabindex="0">
-<h3 class="skill-heading">Data integration</h3>
-<div class="tech-chips">
-<span class="chip">Data modeling</span><span class="chip">SQL</span><span class="chip">Snowflake</span><span class="chip">Azure Data Factory</span><span class="chip">DB2</span><span class="chip">Microsoft Fabric</span>
-</div>
-<p>Professional experience in data modeling, transformation, integration, and cloud data platform work.</p>
-</div>
-<div class="stack-panel" id="tab-python" role="tabpanel" aria-labelledby="skill-python" tabindex="0">
-<h3 class="skill-heading">Python and orchestration</h3>
-<div class="tech-chips">
-<span class="chip">Python automation</span><span class="chip">Airflow DAGs</span>
-</div>
-<p>Professional experience with Python automation and Airflow DAGs. Public project technologies include NumPy, pandas, scikit-learn, TensorFlow, and OpenCV; those demonstrations are described individually below.</p>
-</div>
-</div>
-</div>
-</div></section>
-<section id="projects"><div class="wrapper">
-<div class="section-label">Public source and documentation</div>
-<h2>Selected<br>technical projects</h2>
-<p class="evidence-note">Each project describes the available implementation and its scope. Source code is the evidence; performance claims require a reproducible evaluation.</p>
-<article class="featured-project"><div class="featured-badge">ENGINEERING CAPSTONE</div>
-<div class="featured-content">
-<figure class="project-figure"><img src="assets/quadruped-robot.webp" alt="Assembled four-legged robot with twelve servo motors, reproduced from the capstone report" width="1328" height="777" loading="lazy"><figcaption>Assembled robot · Project report, Figure 8.1, printed page 26</figcaption></figure><h3 class="proj-title">Quadruped robot for navigation and IoT monitoring</h3>
-<p class="proj-desc">A documented engineering project combining Raspberry Pi, servo control, OpenCV edge detection, and environmental sensor monitoring. The repository includes a 35-page project report and Python modules.</p>
-<div class="featured-tags">
-<span class="chip">Python</span><span class="chip">Raspberry Pi</span><span class="chip">OpenCV</span><span class="chip">ThingSpeak</span>
-</div>
-<details><summary>Read the implementation scope</summary><p>The report documents the broader robot. The current source contains a forward gait, navigation decisions, and sensor publishing. Backward and turning routines are missing; navigation prints decisions rather than driving the gait.</p></details><a class="proj-link" href="https://github.com/ashwinpr15/Autonomous-Quadruped-Robot-for-Vision-Based-Navigation-and-IoT-Monitoring" target="_blank" rel="noopener noreferrer">Review capstone source ↗</a> · <a class="proj-link" href="https://github.com/ashwinpr15/Autonomous-Quadruped-Robot-for-Vision-Based-Navigation-and-IoT-Monitoring/blob/main/src/Ashwin%20BE%20Project%20Report.pdf" target="_blank" rel="noopener noreferrer">Read the project report ↗</a>
-</div></article><div class="projects-grid">
-<article class="proj-card"><span class="project-status">MSBA TEAM PROJECT</span><h3 class="proj-title">Formula 1 Cost Cap Analysis</h3>
-<p class="proj-desc">Did the 2021 cost cap help more teams compete near the front? Points share, wins, and podiums from 2010–2025, using a fixed F1DB data release.</p>
-<p class="project-status">Python / pandas / Jupyter</p>
-<details><summary>Scope and limitations</summary><p>Descriptive statistics and exploratory Welch tests on a small post-cap sample. Overlapping 2022 rule changes mean the cost cap's effect cannot be isolated.</p></details><a class="proj-link" href="https://github.com/ashwinpr15/BA780-F1-Cost-Cap" target="_blank" rel="noopener noreferrer">Review F1 cost cap analysis ↗</a></article><article class="proj-card"><span class="project-status">WINDOWS DESKTOP APP</span><h3 class="proj-title">Headset Desk</h3>
-<p class="proj-desc">A Windows 11 app for Sony WH-1000XM5 and WH-CH720N: battery, firmware, noise control, five-band EQ, and a system tray.</p>
-<p class="project-status">C++ / Qt / QML / CMake</p>
-<details><summary>Scope and limitations</summary><p>Experimental beta with installer and portable releases built in CI. Reads are verified on the listed devices; writes are opt-in and not yet verified across firmware versions.</p></details><a class="proj-link" href="https://github.com/ashwinpr15/headset-desk" target="_blank" rel="noopener noreferrer">Review Headset Desk source ↗</a></article><article class="proj-card"><span class="project-status">PYTHON DEMONSTRATION</span><h3 class="proj-title">Synthetic Signal Denoising</h3>
-<p class="proj-desc">Convolutional autoencoder trained on generated 128 × 128 line patterns with Gaussian noise.</p>
-<p class="project-status">TensorFlow / NumPy</p>
-<details><summary>Scope and limitations</summary><p>The repository demonstrates reconstruction and matrix SNR evaluation. It does not load audio recordings or establish production audio quality.</p></details><a class="proj-link" href="https://github.com/ashwinpr15/audio-signal-enhancement" target="_blank" rel="noopener noreferrer">Review synthetic signal denoising source ↗</a></article><article class="proj-card"><span class="project-status">PYTHON DEMONSTRATION</span><h3 class="proj-title">Synthetic Classification Benchmark</h3>
-<p class="proj-desc">Compares two Random Forest configurations on generated records with five features and a constructed binary target.</p>
-<p class="project-status">Python / scikit-learn</p>
-<details><summary>Scope and limitations</summary><p>An educational comparison of fixed model configurations. No clinical validation, cancer model, SMOTE, or explainability pipeline is included.</p></details><a class="proj-link" href="https://github.com/ashwinpr15/healthcare-diagnostic-hub" target="_blank" rel="noopener noreferrer">Review synthetic classification benchmark source ↗</a></article><article class="proj-card"><span class="project-status">PYTHON DEMONSTRATION</span><h3 class="proj-title">Synthetic Network Classification</h3>
-<p class="proj-desc">A Conv1D classifier for generated numeric and categorical connection records, with scaling and one-hot encoding.</p>
-<p class="project-status">TensorFlow / scikit-learn</p>
-<details><summary>Scope and limitations</summary><p>The public implementation uses synthetic data, rather than the NSL-KDD dataset. Scores on generated labels do not establish real intrusion detection performance.</p></details><a class="proj-link" href="https://github.com/ashwinpr15/network-security-analytics" target="_blank" rel="noopener noreferrer">Review synthetic network classification source ↗</a></article>
-</div>
-</div></section>
-<section id="education"><div class="wrapper">
-<div class="section-label">Education</div>
-<h2>Business analytics<br>and engineering</h2>
-<div class="education-grid">
-<article class="education-card"><p class="project-status">CURRENT STUDIES · SEPTEMBER 2026–PRESENT</p>
-<h3>Master of Science in Business Analytics</h3>
-<p>Boston University · Questrom School of Business</p>
-<p>MSBA student · 16-month track</p>
-<p>Boston, MA, USA</p></article><article class="education-card"><p class="project-status">GRADUATED 2021</p>
-<h3>Bachelor of Engineering</h3>
-<p>Electronics and Communication Engineering with CS</p>
-<p>SDM Institute of Technology · Visvesvaraya Technological University (VTU)</p></article><article class="education-card"><p class="project-status">GRADUATE ADMISSIONS TEST</p>
-<h3>GRE</h3>
-<p>330+</p></article>
-</div>
-</div></section><section id="connect"><div class="wrapper">
-<div class="section-label">Contact</div>
-<h2>Let's connect</h2>
-<div class="connect-grid">
-<p class="connect-bio">Based in <strong>Boston, MA, USA</strong> and studying Business Analytics at <strong>BU Questrom</strong>. Connect with me about BI development, analytics, reporting automation, and data integration.</p>
-<div class="connect-links">
-<a class="connect-link" href="https://in.linkedin.com/in/prashwin" target="_blank" rel="noopener noreferrer">LinkedIn · prashwin ↗</a><a class="connect-link" href="mailto:ashwinpr@bu.edu">Email · ashwinpr@bu.edu</a><a class="connect-link" href="https://github.com/ashwinpr15" target="_blank" rel="noopener noreferrer">GitHub · ashwinpr15 ↗</a>
-</div>
-</div>
-</div></section></main><div class="wrapper"><footer><p class="footer-copy">© 2026 Ashwin Pillanda Ravindra</p>
-<a class="proj-link" href="#main">Back to top ↑</a></footer></div>
+<div class="progress" aria-hidden="true"><span id="progressBar"></span></div>
+
+<header class="nav" id="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#top" aria-label="Ashwin Pillanda Ravindra, back to top"><span class="logo-mark">APR</span><span class="logo-dot" aria-hidden="true"></span></a>
+    <nav class="nav-links" aria-label="Sections">
+      <a href="#about">About</a><a href="#journey">Journey</a><a href="#toolkit">Toolkit</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="kbd-btn" id="paletteOpen" type="button" aria-label="Open quick menu"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg><span class="kbd-hint"><kbd>Ctrl</kbd><kbd>K</kbd></span></button>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch to light theme">
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+      </button>
+      <button class="icon-btn menu-btn" id="menuBtn" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"><span></span><span></span><span></span></button>
+    </div>
+  </div>
+  <div class="mobile-menu" id="mobileMenu" hidden>
+    <nav aria-label="Mobile sections">
+      <a href="#about">About</a><a href="#journey">Journey</a><a href="#toolkit">Toolkit</a><a href="#projects">Projects</a><a href="#education">Education</a><a href="#contact">Contact</a>
+      <a href="assets/Ashwin-Resume.pdf" target="_blank" rel="noopener">Resume ↗</a>
+    </nav>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+
+<!-- ===================================================== HERO -->
+<section class="hero" id="top" aria-labelledby="heroName">
+  <canvas class="hero-canvas" id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <p class="status-pill"><span class="pulse-dot" aria-hidden="true"></span>MSBA student · Boston, MA <span class="sep" aria-hidden="true">·</span> <span id="localTime">Boston time</span></p>
+      <p class="eyebrow">Hello, I'm</p>
+      <h1 id="heroName">Ashwin <span class="grad-text">Pillanda Ravindra</span></h1>
+      <p class="typed-line">I turn data into <span class="typed" id="typed">Power BI reports</span><span class="caret" aria-hidden="true"></span></p>
+      <p class="hero-lede">An Electronics &amp; CS engineer who spent about <strong>five years at Tata Consultancy Services as a Business Intelligence Developer</strong>, and now studies Business Analytics at <strong>Boston University's Questrom School of Business</strong>.</p>
+      <ol class="path" aria-label="Career path">
+        <li class="c-violet"><span class="path-dot" aria-hidden="true"></span>Electronics &amp; CS Engineer</li>
+        <li class="c-teal"><span class="path-dot" aria-hidden="true"></span>BI Developer · 5 yrs @ TCS</li>
+        <li class="c-orange"><span class="path-dot" aria-hidden="true"></span>MSBA @ BU Questrom</li>
+      </ol>
+      <div class="cta-row">
+        <a class="btn btn-primary" href="#projects">See my work <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a class="btn btn-ghost" href="assets/Ashwin-Resume.pdf" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg>Resume</a>
+        <a class="btn btn-ghost" href="#contact"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg>Contact</a>
+      </div>
+    </div>
+    <div class="hero-visual">
+      <div class="orbit" aria-hidden="true">
+        <span class="orbit-ring r1"></span><span class="orbit-ring r2"></span>
+        <div class="orbit-track">
+          <span class="badge b1 c-teal">Power BI</span>
+          <span class="badge b2 c-blue">SQL</span>
+          <span class="badge b3 c-violet">Python</span>
+          <span class="badge b4 c-orange">Airflow</span>
+        </div>
+      </div>
+      <div class="portrait">
+        <img src="assets/portrait.webp" alt="Portrait of Ashwin Pillanda Ravindra" width="600" height="600" fetchpriority="high">
+      </div>
+    </div>
+  </div>
+  <a class="scroll-cue" href="#about" aria-label="Scroll to About"><span></span></a>
+</section>
+
+<!-- ===================================================== KPIs -->
+<section class="kpis" aria-label="Highlights">
+  <div class="wrap kpi-grid">
+    <div class="kpi c-teal reveal"><p class="kpi-num"><span class="tilde">~</span><span class="count" data-to="5">5</span><span class="unit"> yrs</span></p><p class="kpi-label">Enterprise BI at TCS</p><p class="kpi-sub">Aug 2021 – Aug 2026</p></div>
+    <div class="kpi c-blue reveal"><p class="kpi-num"><span class="count" data-to="6">6</span>+</p><p class="kpi-label">QlikView → Power BI</p><p class="kpi-sub">application migrations</p></div>
+    <div class="kpi c-violet reveal"><p class="kpi-num"><span class="count" data-to="3">3</span></p><p class="kpi-label">Global enterprise clients</p><p class="kpi-sub">Stellantis · Samsung · Bosch</p></div>
+    <div class="kpi c-orange reveal"><p class="kpi-num"><span class="count" data-to="330">330</span>+</p><p class="kpi-label">GRE score</p><p class="kpi-sub">Graduate admissions test</p></div>
+  </div>
+</section>
+
+<!-- ===================================================== ABOUT -->
+<section class="section" id="about" aria-labelledby="aboutTitle">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">01 · About</p>
+      <h2 id="aboutTitle">From signals, to data, <span class="grad-text">to decisions</span></h2>
+      <p class="section-lede">I started out wiring circuits and writing C++. At TCS I spent five years turning enterprise data into reporting that people actually use. Now I'm adding statistics and business analytics on top of that engineering and BI base.</p>
+    </div>
+    <div class="pillars">
+      <article class="pillar c-violet reveal">
+        <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></div>
+        <p class="pillar-tag">Signals</p>
+        <h3>An engineer's foundation</h3>
+        <p>A BE in Electronics &amp; Communication Engineering with CS. I built a 12-servo quadruped robot for my capstone and still write C++ for fun: my Windows headphone app ships with an installer.</p>
+      </article>
+      <article class="pillar c-teal reveal">
+        <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><ellipse cx="12" cy="5" rx="8" ry="3"/><path d="M4 5v14c0 1.7 3.6 3 8 3s8-1.3 8-3V5"/><path d="M4 12c0 1.7 3.6 3 8 3s8-1.3 8-3"/></svg></div>
+        <p class="pillar-tag">Data</p>
+        <h3>Enterprise BI delivery</h3>
+        <p>Five years of Power BI and QlikView development, data modeling, SQL and reporting automation at TCS, including <strong>6+ QlikView → Power BI migrations</strong>, with Snowflake, Azure Data Factory, Python and Airflow underneath.</p>
+      </article>
+      <article class="pillar c-orange reveal">
+        <div class="pillar-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20h18"/><rect x="5" y="11" width="3" height="7" rx="1"/><rect x="10.5" y="7" width="3" height="11" rx="1"/><rect x="16" y="3" width="3" height="15" rx="1"/></svg></div>
+        <p class="pillar-tag">Decisions</p>
+        <h3>Business analytics</h3>
+        <p>An MSBA at BU Questrom (16-month track) to sharpen the statistics and business thinking behind the dashboards, starting with a team analysis of Formula 1's 2021 cost cap.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================== JOURNEY -->
+<section class="section section-alt" id="journey" aria-labelledby="journeyTitle">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">02 · Journey</p>
+      <h2 id="journeyTitle">Engineer → BI developer → analyst</h2>
+    </div>
+    <ol class="timeline" id="timeline">
+      <li class="tl-item c-violet reveal">
+        <div class="tl-node" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="6" y="6" width="12" height="12" rx="2"/><path d="M9 2v4M15 2v4M9 18v4M15 18v4M2 9h4M2 15h4M18 9h4M18 15h4"/></svg></div>
+        <article class="tl-card">
+          <p class="tl-when">Graduated 2021</p>
+          <h3>Bachelor of Engineering</h3>
+          <p class="tl-org">Electronics &amp; Communication Engineering with CS · SDM Institute of Technology, VTU</p>
+          <ul class="tl-list">
+            <li>Capstone: autonomous quadruped robot with Raspberry Pi, OpenCV navigation and IoT sensor monitoring, documented in a 35-page report</li>
+            <li>Coursework in probability &amp; statistics, data structures in C++, OOP, operating systems and digital signal processing</li>
+          </ul>
+          <div class="tags"><span>Raspberry Pi</span><span>OpenCV</span><span>C++</span><span>DSP</span></div>
+        </article>
+      </li>
+      <li class="tl-item c-teal reveal">
+        <div class="tl-node" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M3 20h18"/><rect x="5" y="11" width="3" height="7" rx="1"/><rect x="10.5" y="7" width="3" height="11" rx="1"/><rect x="16" y="3" width="3" height="15" rx="1"/></svg></div>
+        <article class="tl-card">
+          <p class="tl-when">Aug 2021 – Aug 2026 · ~5 years</p>
+          <h3>Business Intelligence Developer</h3>
+          <p class="tl-org">Tata Consultancy Services (TCS) · Bengaluru, India</p>
+          <div class="tl-sub">
+            <div><h4>Reporting &amp; BI</h4><p>Enterprise BI implementations, dashboards and reports in Power BI and QlikView; reporting automation.</p></div>
+            <div><h4>Modernization</h4><p>Migrated <strong>6+ applications</strong> from QlikView to Power BI.</p></div>
+            <div><h4>Data workflows</h4><p>Data modeling and SQL transformations; Snowflake, Azure Data Factory, DB2 and Microsoft Fabric; Python automation and Airflow DAGs.</p></div>
+          </div>
+          <p class="tl-note">Clients: Stellantis · Samsung · Bosch. Recognized with a Special Initiative Award (2024), Best Team Awards (2022, 2023) and an On The Spot Award (2022). Mentored junior analysts on BI practices.</p>
+          <div class="tags"><span>Power BI</span><span>QlikView</span><span>SQL</span><span>Snowflake</span><span>ADF</span><span>Airflow</span></div>
+        </article>
+      </li>
+      <li class="tl-item c-orange reveal">
+        <div class="tl-node" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3.5 2.5 8.5 2.5 12 0v-5"/><path d="M22 9v6"/></svg></div>
+        <article class="tl-card">
+          <p class="tl-when">Sep 2026 – present</p>
+          <h3>MS in Business Analytics</h3>
+          <p class="tl-org">Boston University, Questrom School of Business · Boston, MA · 16-month track</p>
+          <ul class="tl-list">
+            <li>Team lead for two Fall 2026 course teams: coordinating deliverables, tasks and schedules</li>
+            <li>BU Information Technology volunteer, teaching IT and programming fundamentals</li>
+            <li>BA780 team project: did Formula 1's cost cap improve competitive balance?</li>
+          </ul>
+          <div class="tags"><span>Statistics</span><span>Python</span><span>pandas</span><span>Business analytics</span></div>
+        </article>
+      </li>
+    </ol>
+  </div>
+</section>
+
+<!-- ===================================================== TOOLKIT -->
+<section class="section" id="toolkit" aria-labelledby="toolkitTitle">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">03 · Toolkit</p>
+      <h2 id="toolkitTitle">A stack that flows left to right</h2>
+      <p class="section-lede">Click any tool to see where I've used it. <span class="legend"><span class="lg lg-pro"></span>Professional at TCS <span class="lg lg-proj"></span>Public projects &amp; study</span></p>
+    </div>
+    <div class="stack" id="stack">
+      <div class="layer c-violet reveal">
+        <p class="layer-num">01 · Engineering roots</p><h3>Systems</h3>
+        <ul>
+          <li><button type="button" data-skill="cpp">C / C++</button></li>
+          <li><button type="button" class="pro" data-skill="python">Python</button></li>
+          <li><button type="button" data-skill="raspberrypi">Raspberry Pi</button></li>
+          <li><button type="button" data-skill="opencv">OpenCV</button></li>
+          <li><button type="button" data-skill="qt">Qt · QML</button></li>
+          <li><button type="button" data-skill="iot">Sensors &amp; IoT</button></li>
+        </ul>
+      </div>
+      <div class="layer-arrow" aria-hidden="true"><span></span></div>
+      <div class="layer c-blue reveal">
+        <p class="layer-num">02 · Integration</p><h3>Data</h3>
+        <ul>
+          <li><button type="button" class="pro" data-skill="sql">SQL</button></li>
+          <li><button type="button" class="pro" data-skill="snowflake">Snowflake</button></li>
+          <li><button type="button" class="pro" data-skill="adf">Azure Data Factory</button></li>
+          <li><button type="button" class="pro" data-skill="airflow">Apache Airflow</button></li>
+          <li><button type="button" class="pro" data-skill="db2">DB2</button></li>
+          <li><button type="button" class="pro" data-skill="fabric">Microsoft Fabric</button></li>
+        </ul>
+      </div>
+      <div class="layer-arrow" aria-hidden="true"><span></span></div>
+      <div class="layer c-teal reveal">
+        <p class="layer-num">03 · Reporting</p><h3>BI</h3>
+        <ul>
+          <li><button type="button" class="pro" data-skill="powerbi">Power BI</button></li>
+          <li><button type="button" class="pro" data-skill="dataflows">Power BI Dataflows</button></li>
+          <li><button type="button" class="pro" data-skill="qlikview">QlikView</button></li>
+          <li><button type="button" class="pro" data-skill="nprinting">Qlik NPrinting</button></li>
+          <li><button type="button" class="pro" data-skill="powerapps">PowerApps</button></li>
+          <li><button type="button" class="pro" data-skill="modeling">Data modeling</button></li>
+        </ul>
+      </div>
+      <div class="layer-arrow" aria-hidden="true"><span></span></div>
+      <div class="layer c-orange reveal">
+        <p class="layer-num">04 · Analysis</p><h3>Analytics</h3>
+        <ul>
+          <li><button type="button" data-skill="pandas">pandas</button></li>
+          <li><button type="button" data-skill="sklearn">scikit-learn</button></li>
+          <li><button type="button" data-skill="tensorflow">TensorFlow</button></li>
+          <li><button type="button" data-skill="jupyter">Jupyter</button></li>
+          <li><button type="button" data-skill="statistics">Statistics</button></li>
+          <li><button type="button" data-skill="analytics">Business analytics</button></li>
+        </ul>
+      </div>
+    </div>
+    <p class="skill-info" id="skillInfo" role="status" aria-live="polite"></p>
+  </div>
+</section>
+
+<!-- ===================================================== PROJECTS -->
+<section class="section section-alt" id="projects" aria-labelledby="projectsTitle">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">04 · Projects</p>
+      <h2 id="projectsTitle">Things I've built and analyzed</h2>
+      <p class="section-lede">Open any card for the approach, results and honest limits. Client work from TCS isn't public, so these are my own and academic projects.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter projects">
+      <button type="button" class="filter is-active" data-filter="all" aria-pressed="true">All</button>
+      <button type="button" class="filter" data-filter="analytics" aria-pressed="false">Analytics</button>
+      <button type="button" class="filter" data-filter="engineering" aria-pressed="false">Engineering</button>
+      <button type="button" class="filter" data-filter="apps" aria-pressed="false">Apps</button>
+      <button type="button" class="filter" data-filter="ml" aria-pressed="false">ML lab</button>
+    </div>
+    <p class="filter-note" id="filterNote" hidden><span id="filterNoteText"></span> <button type="button" id="filterClear">Show all</button></p>
+
+    <div class="projects" id="projectGrid">
+
+      <article class="project featured c-orange" data-cat="analytics" data-skills="python pandas jupyter statistics analytics">
+        <button class="project-open" type="button" aria-haspopup="dialog">
+          <span class="cover"><img class="only-dark" src="assets/projects/proj-f1-dark.svg" alt="" width="1280" height="360" loading="lazy"><img class="only-light" src="assets/projects/proj-f1-light.svg" alt="" width="1280" height="360" loading="lazy"></span>
+          <span class="project-body">
+            <span class="project-cat">MSBA team project · Analytics</span>
+            <span class="project-title">Formula 1 Cost Cap</span>
+            <span class="project-desc">Did the 2021 cost cap help more teams compete near the front? Points, wins and podiums from 2010–2025.</span>
+            <span class="tags"><span>Python</span><span>pandas</span><span>Jupyter</span><span>Welch tests</span></span>
+          </span>
+        </button>
+        <div class="project-detail" hidden>
+          <h3>Formula 1 Cost Cap &amp; Competitive Balance</h3>
+          <p class="pd-meta">BA780 Introduction to Data Analytics · BU Questrom · Team B05 · 2026</p>
+          <div class="pd-stats">
+            <div><b>54.72% → 52.14%</b><span>Top-two points share, before vs after the cap</span></div>
+            <div><b>p = 0.245</b><span>Welch test: inconclusive</span></div>
+            <div><b>69.79%</b><span>Big Three share after the cap, excluding 2025</span></div>
+          </div>
+          <h4>Approach</h4>
+          <ul>
+            <li>Downloads a fixed F1DB data release and checks its SHA-256 before use.</li>
+            <li>Audits missing values and duplicates, joins constructors, standings and race results, and documents team renames.</li>
+            <li>Computes each constructor's share of season points and compares 2010–2020 with 2021–2025, giving every season equal weight.</li>
+          </ul>
+          <h4>Limits</h4>
+          <p>Five post-cap seasons is a small sample, and the 2022 aerodynamic rule changes overlap the cap, so its effect can't be isolated. Points share measures sporting results, not spending.</p>
+          <div class="pd-links"><a class="btn btn-primary" href="https://github.com/ashwinpr15/BA780-F1-Cost-Cap" target="_blank" rel="noopener">View notebook &amp; code ↗</a></div>
+        </div>
+      </article>
+
+      <article class="project featured c-blue" data-cat="apps engineering" data-skills="cpp qt">
+        <button class="project-open" type="button" aria-haspopup="dialog">
+          <span class="cover"><img class="only-dark" src="assets/projects/proj-headset-dark.svg" alt="" width="1280" height="360" loading="lazy"><img class="only-light" src="assets/projects/proj-headset-light.svg" alt="" width="1280" height="360" loading="lazy"></span>
+          <span class="project-body">
+            <span class="project-cat">Windows desktop app · Beta</span>
+            <span class="project-title">Headset Desk</span>
+            <span class="project-desc">A Windows 11 app for Sony WH-1000XM5 and WH-CH720N headphones: battery, noise control, five-band EQ and a tray icon.</span>
+            <span class="tags"><span>C++</span><span>Qt · QML</span><span>CMake</span><span>GitHub Actions</span></span>
+          </span>
+        </button>
+        <div class="project-detail" hidden>
+          <h3>Headset Desk</h3>
+          <p class="pd-meta">C++ · Qt 6 / QML · CMake · v0.5.0-beta.1</p>
+          <img class="pd-shot only-dark" src="https://raw.githubusercontent.com/ashwinpr15/headset-desk/main/docs/screenshots/dark-controls-100.png" alt="Headset Desk headphones page in dark mode, with simulated data" loading="lazy">
+          <img class="pd-shot only-light" src="https://raw.githubusercontent.com/ashwinpr15/headset-desk/main/docs/screenshots/light-100.png" alt="Headset Desk headphones page in light mode, with simulated data" loading="lazy">
+          <h4>What it does</h4>
+          <ul>
+            <li>Reads model, battery, charging state, firmware and codec from the headset over Bluetooth.</li>
+            <li>Noise Cancelling / Ambient / Off, ambient level and voice passthrough, five EQ bands and Clear Bass.</li>
+            <li>A Windows 11 style interface with a collapsible navigation pane, light/dark themes, a tray icon and keyboard focus rings.</li>
+            <li>Every change is sent once and confirmed by reading it back; nothing is silently resent.</li>
+          </ul>
+          <h4>Shipping</h4>
+          <p>CI builds an installer and a portable ZIP with checksums. It installs per user without admin rights. It builds on protocol work from marconvcm/sony-device-center (MIT), with attribution in the repo.</p>
+          <h4>Limits</h4>
+          <p>Experimental beta: reads are verified on the listed devices; changing settings is opt-in and not yet verified across firmware versions.</p>
+          <div class="pd-links"><a class="btn btn-primary" href="https://github.com/ashwinpr15/headset-desk/releases" target="_blank" rel="noopener">Download ↗</a><a class="btn btn-ghost" href="https://github.com/ashwinpr15/headset-desk" target="_blank" rel="noopener">Source ↗</a></div>
+        </div>
+      </article>
+
+      <article class="project c-violet" data-cat="engineering" data-skills="python raspberrypi opencv iot">
+        <button class="project-open" type="button" aria-haspopup="dialog">
+          <span class="cover"><img class="only-dark" src="assets/projects/proj-robot-dark.svg" alt="" width="1280" height="360" loading="lazy"><img class="only-light" src="assets/projects/proj-robot-light.svg" alt="" width="1280" height="360" loading="lazy"></span>
+          <span class="project-body">
+            <span class="project-cat">Engineering capstone · 2021</span>
+            <span class="project-title">Quadruped Robot</span>
+            <span class="project-desc">A 12-servo, four-legged robot with camera-based navigation and IoT sensor monitoring.</span>
+            <span class="tags"><span>Raspberry Pi</span><span>OpenCV</span><span>Python</span><span>ThingSpeak</span></span>
+          </span>
+        </button>
+        <div class="project-detail" hidden>
+          <h3>Quadruped Robot for Vision-Based Navigation &amp; IoT Monitoring</h3>
+          <p class="pd-meta">BE capstone · SDM Institute of Technology · 2021</p>
+          <figure><img class="pd-shot" src="assets/quadruped-robot.webp" alt="The assembled four-legged robot with twelve servo motors" width="1328" height="777" loading="lazy"><figcaption>The assembled robot, from Figure 8.1 of the project report.</figcaption></figure>
+          <h4>What's in the repo</h4>
+          <ul>
+            <li>PCA9685 servo control, leg calibration, standing pose and a forward gait.</li>
+            <li>Camera navigation: filtering, Canny edges and region scanning to choose a direction.</li>
+            <li>DHT11 temperature and humidity readings published to ThingSpeak.</li>
+            <li>The full 35-page report: hardware, gait design, navigation and streaming.</li>
+          </ul>
+          <h4>Limits</h4>
+          <p>The checked-in code is part of the system in the report: backward and turning gaits are missing, and navigation prints decisions rather than driving the legs.</p>
+          <div class="pd-links"><a class="btn btn-primary" href="https://github.com/ashwinpr15/Autonomous-Quadruped-Robot-for-Vision-Based-Navigation-and-IoT-Monitoring" target="_blank" rel="noopener">Source ↗</a><a class="btn btn-ghost" href="https://github.com/ashwinpr15/Autonomous-Quadruped-Robot-for-Vision-Based-Navigation-and-IoT-Monitoring/blob/main/src/Ashwin%20BE%20Project%20Report.pdf" target="_blank" rel="noopener">Read the report ↗</a></div>
+        </div>
+      </article>
+
+      <article class="project c-teal" data-cat="apps" data-skills="">
+        <button class="project-open" type="button" aria-haspopup="dialog">
+          <span class="cover"><img class="only-dark" src="assets/projects/proj-portfolio-dark.svg" alt="" width="1280" height="360" loading="lazy"><img class="only-light" src="assets/projects/proj-portfolio-light.svg" alt="" width="1280" height="360" loading="lazy"></span>
+          <span class="project-body">
+            <span class="project-cat">Personal site</span>
+            <span class="project-title">This Portfolio</span>
+            <span class="project-desc">Hand-written HTML, CSS and JavaScript: no framework, no build step.</span>
+            <span class="tags"><span>HTML</span><span>CSS</span><span>JavaScript</span><span>Accessible</span></span>
+          </span>
+        </button>
+        <div class="project-detail" hidden>
+          <h3>This Portfolio</h3>
+          <p class="pd-meta">HTML · CSS · JavaScript · GitHub Pages</p>
+          <ul>
+            <li>Light and dark themes that follow your system, with a manual toggle.</li>
+            <li>An animated canvas behind the hero that pauses off-screen and respects reduced motion.</li>
+            <li>A toolkit that links skills to projects, filters, popups, a live GitHub feed and a Ctrl+K quick menu.</li>
+            <li>Keyboard friendly, with visible focus, a skip link and no content hidden from people without JavaScript.</li>
+          </ul>
+          <div class="pd-links"><a class="btn btn-primary" href="https://github.com/ashwinpr15/ashwinpr15.github.io" target="_blank" rel="noopener">Source ↗</a></div>
+        </div>
+      </article>
+
+      <article class="project small c-orange" data-cat="ml" data-skills="python tensorflow">
+        <button class="project-open" type="button" aria-haspopup="dialog">
+          <span class="cover"><img class="only-dark" src="assets/projects/proj-audio-dark.svg" alt="" width="1280" height="360" loading="lazy"><img class="only-light" src="assets/projects/proj-audio-light.svg" alt="" width="1280" height="360" loading="lazy"></span>
+          <span class="project-body">
+            <span class="project-cat">ML lab · Synthetic data</span>
+            <span class="project-title">Signal Denoising</span>
+            <span class="project-desc">A convolutional autoencoder that cleans noisy spectrogram-like matrices.</span>
+            <span class="tags"><span>TensorFlow</span><span>Keras</span><span>NumPy</span></span>
+          </span>
+        </button>
+        <div class="project-detail" hidden>
+          <h3>Signal Denoising Autoencoder</h3>
+          <p class="pd-meta">TensorFlow / Keras · NumPy · Matplotlib</p>
+          <ul>
+            <li>Generates 128 × 128 line patterns, adds Gaussian noise and trains a two-stage convolutional autoencoder (MSE loss).</li>
+            <li>Compares signal-to-noise ratio before and after reconstruction and saves comparison plots.</li>
+          </ul>
+          <h4>Limits</h4>
+          <p>Inputs are synthetic matrices, not audio recordings, so this shows the denoising technique, not real audio quality.</p>
+          <div class="pd-links"><a class="btn btn-primary" href="https://github.com/ashwinpr15/audio-signal-enhancement" target="_blank" rel="noopener">Source ↗</a></div>
+        </div>
+      </article>
+
+      <article class="project small c-teal" data-cat="ml" data-skills="python sklearn pandas">
+        <button class="project-open" type="button" aria-haspopup="dialog">
+          <span class="cover"><img class="only-dark" src="assets/projects/proj-forest-dark.svg" alt="" width="1280" height="360" loading="lazy"><img class="only-light" src="assets/projects/proj-forest-light.svg" alt="" width="1280" height="360" loading="lazy"></span>
+          <span class="project-body">
+            <span class="project-cat">ML lab · Synthetic data</span>
+            <span class="project-title">Random Forest Benchmark</span>
+            <span class="project-desc">Comparing two Random Forest configurations on generated structured records.</span>
+            <span class="tags"><span>scikit-learn</span><span>pandas</span><span>Python</span></span>
+          </span>
+        </button>
+        <div class="project-detail" hidden>
+          <h3>Random Forest Benchmark</h3>
+          <p class="pd-meta">Python · scikit-learn · pandas</p>
+          <ul>
+            <li>Generates five-feature records with a noisy rule-based label.</li>
+            <li>Compares a depth-limited 100-tree model with a 300-tree model on a stratified 80/20 split, reporting the signed change. It can go down as well as up.</li>
+            <li>Includes small tests for the reporting logic.</li>
+          </ul>
+          <h4>Limits</h4>
+          <p>Fixed configurations on synthetic data. This is a learning exercise, not a diagnostic or clinical tool.</p>
+          <div class="pd-links"><a class="btn btn-primary" href="https://github.com/ashwinpr15/healthcare-diagnostic-hub" target="_blank" rel="noopener">Source ↗</a></div>
+        </div>
+      </article>
+
+      <article class="project small c-blue" data-cat="ml" data-skills="python tensorflow sklearn">
+        <button class="project-open" type="button" aria-haspopup="dialog">
+          <span class="cover"><img class="only-dark" src="assets/projects/proj-network-dark.svg" alt="" width="1280" height="360" loading="lazy"><img class="only-light" src="assets/projects/proj-network-light.svg" alt="" width="1280" height="360" loading="lazy"></span>
+          <span class="project-body">
+            <span class="project-cat">ML lab · Synthetic data</span>
+            <span class="project-title">Traffic Classifier</span>
+            <span class="project-desc">A Conv1D model on connection records with leakage-free preprocessing.</span>
+            <span class="tags"><span>TensorFlow</span><span>scikit-learn</span><span>Conv1D</span></span>
+          </span>
+        </button>
+        <div class="project-detail" hidden>
+          <h3>Network Traffic Classifier</h3>
+          <p class="pd-meta">TensorFlow / Keras · scikit-learn · joblib</p>
+          <ul>
+            <li>Stratified 60/20/20 train/validation/test split of raw records.</li>
+            <li>Scaling and one-hot encoding are fitted on training data only; early stopping uses validation, and the test set is touched once.</li>
+            <li>Saves the model, the preprocessor and an evaluation record, with tests for unseen categories and serialization.</li>
+          </ul>
+          <h4>Limits</h4>
+          <p>Records and labels are generated, so the scores show the pipeline working, not real-world intrusion detection.</p>
+          <div class="pd-links"><a class="btn btn-primary" href="https://github.com/ashwinpr15/network-security-analytics" target="_blank" rel="noopener">Source ↗</a></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="gh-feed reveal" aria-labelledby="ghTitle">
+      <div class="gh-head">
+        <h3 id="ghTitle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.8V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg>Latest on GitHub</h3>
+        <a href="https://github.com/ashwinpr15?tab=repositories" target="_blank" rel="noopener">All repositories ↗</a>
+      </div>
+      <ul class="gh-list" id="ghList">
+        <li class="gh-empty">Loading recent activity… <a href="https://github.com/ashwinpr15?tab=repositories" target="_blank" rel="noopener">or browse on GitHub ↗</a></li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================== EDUCATION -->
+<section class="section" id="education" aria-labelledby="eduTitle">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <p class="kicker">05 · Education</p>
+      <h2 id="eduTitle">Engineering meets analytics</h2>
+    </div>
+    <div class="edu-grid">
+      <article class="edu c-orange reveal">
+        <p class="edu-when">Sep 2026 – present</p>
+        <h3>MS in Business Analytics</h3>
+        <p>Boston University · Questrom School of Business</p>
+        <p class="edu-meta">Boston, MA · 16-month track</p>
+      </article>
+      <article class="edu c-violet reveal">
+        <p class="edu-when">Graduated 2021</p>
+        <h3>BE, Electronics &amp; Communication Engineering with CS</h3>
+        <p>SDM Institute of Technology · Visvesvaraya Technological University</p>
+        <p class="edu-meta">Capstone: autonomous quadruped robot</p>
+      </article>
+      <article class="edu edu-gre c-teal reveal">
+        <p class="edu-when">Graduate admissions</p>
+        <h3>GRE</h3>
+        <p class="gre"><span>330</span>+</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ===================================================== CONTACT -->
+<section class="section" id="contact" aria-labelledby="contactTitle">
+  <div class="wrap">
+    <div class="contact reveal">
+      <div class="contact-copy">
+        <p class="kicker">06 · Contact</p>
+        <h2 id="contactTitle">Let's talk data</h2>
+        <p>I'm in Boston studying at BU Questrom. Happy to talk about BI development, analytics, reporting automation and data integration.</p>
+      </div>
+      <div class="contact-actions">
+        <button class="contact-card copy" type="button" id="copyEmail" data-email="ashwinpr@bu.edu">
+          <span class="cc-icon c-orange" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/></svg></span>
+          <span class="cc-text"><span class="cc-label">Email</span><span class="cc-value">ashwinpr@bu.edu</span></span>
+          <span class="cc-action" aria-hidden="true">Copy</span>
+        </button>
+        <a class="contact-card" href="https://in.linkedin.com/in/prashwin" target="_blank" rel="noopener">
+          <span class="cc-icon c-blue" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><path d="M8 10v7M8 7v.01M12 17v-4a2 2 0 0 1 4 0v4M12 10v7"/></svg></span>
+          <span class="cc-text"><span class="cc-label">LinkedIn</span><span class="cc-value">in/prashwin</span></span>
+          <span class="cc-action" aria-hidden="true">↗</span>
+        </a>
+        <a class="contact-card" href="https://github.com/ashwinpr15" target="_blank" rel="noopener">
+          <span class="cc-icon c-violet" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M9 19c-4 1.5-4-2-6-2.5M15 21v-3.5c0-1 .1-1.4-.5-2 2.8-.3 5.5-1.4 5.5-6a4.6 4.6 0 0 0-1.3-3.2 4.2 4.2 0 0 0-.1-3.2s-1.1-.3-3.5 1.3a12 12 0 0 0-6.2 0C6.5 2.8 5.4 3.1 5.4 3.1a4.2 4.2 0 0 0-.1 3.2A4.6 4.6 0 0 0 4 9.5c0 4.6 2.7 5.7 5.5 6-.6.6-.6 1.2-.5 2V21"/></svg></span>
+          <span class="cc-text"><span class="cc-label">GitHub</span><span class="cc-value">ashwinpr15</span></span>
+          <span class="cc-action" aria-hidden="true">↗</span>
+        </a>
+        <a class="contact-card" href="assets/Ashwin-Resume.pdf" target="_blank" rel="noopener">
+          <span class="cc-icon c-teal" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></svg></span>
+          <span class="cc-text"><span class="cc-label">Resume</span><span class="cc-value">One page · PDF</span></span>
+          <span class="cc-action" aria-hidden="true">↗</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="footer">
+  <div class="wrap footer-inner">
+    <p class="flow"><span class="c-violet">signals</span> → <span class="c-teal">data</span> → <span class="c-orange">decisions</span></p>
+    <p class="footer-meta">© 2026 Ashwin Pillanda Ravindra · Hand-built with HTML, CSS &amp; JavaScript</p>
+    <a class="to-top" href="#top">Back to top ↑</a>
+  </div>
+</footer>
+
+<dialog class="modal" id="projectModal" aria-labelledby="modalTitle">
+  <div class="modal-inner">
+    <button class="icon-btn modal-close" type="button" id="modalClose" aria-label="Close"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button>
+    <div class="modal-body" id="modalBody"></div>
+  </div>
+</dialog>
+
+<dialog class="palette" id="palette" aria-label="Quick menu">
+  <div class="palette-inner">
+    <div class="palette-search"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="11" cy="11" r="6"/><path d="m20 20-4.5-4.5"/></svg><input id="paletteInput" type="text" placeholder="Jump to a section or action…" autocomplete="off" aria-label="Search commands" aria-controls="paletteList" role="combobox" aria-expanded="true"></div>
+    <ul class="palette-list" id="paletteList" role="listbox"></ul>
+    <p class="palette-foot"><kbd>↑</kbd><kbd>↓</kbd> move <kbd>Enter</kbd> select <kbd>Esc</kbd> close</p>
+  </div>
+</dialog>
+
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+
 <script src="script.js" defer></script>
 </body>
 </html>
-

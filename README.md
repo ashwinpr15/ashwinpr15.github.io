@@ -3,29 +3,41 @@
   <img src="assets/banner-light.svg" alt="Ashwin Pillanda Ravindra portfolio" width="100%">
 </picture>
 
-# Ashwin Pillanda Ravindra portfolio
+# Ashwin Pillanda Ravindra · Portfolio
 
-Static portfolio for BI development, analytics, reporting automation, and data integration. Retains the existing Syne/Libre Baskerville typography, teal palette, portrait, cards, and light/dark themes.
+Source for [ashwinpr15.github.io](https://ashwinpr15.github.io/): my BI experience at TCS, MSBA studies at BU Questrom, toolkit, projects and resume.
+
+Hand-written HTML, CSS and JavaScript. No framework, no build step.
+
+## Features
+
+- **Signals → data → decisions** colour story: violet for engineering, teal for BI at TCS, orange for analytics
+- Animated hero canvas that pauses off-screen and stops when reduced motion is on
+- Count-up highlights, a scroll-linked career timeline and scroll-spy navigation
+- Interactive toolkit: click a skill to see which projects use it, with professional (TCS) and project skills marked separately
+- Filterable project grid with detail popups covering approach, results and limits
+- Live "Latest on GitHub" feed from the GitHub API, with caching and a fallback
+- `Ctrl` / `⌘` + `K` (or `/`) quick menu for sections, theme, email and links
+- Light and dark themes that follow the system, with a manual toggle
+- Responsive from 320 px phones to wide desktops; keyboard friendly, with a skip link and visible focus
 
 ## Local preview
 
-From this directory, run `python -m http.server 8000`, then open `http://localhost:8000`. No build step, package installation, or framework is required.
+```sh
+python -m http.server 8000
+```
+
+Then open http://localhost:8000.
 
 ## Files
 
-- `index.html`: semantic content and metadata
-- `styles.css`: original visual system with readability and accessibility refinements
-- `script.js`: themes, keyboard-accessible tabs, and mobile navigation
-- `assets/Ashwin-Resume.pdf`: the current downloadable resume
-- `assets/quadruped-robot.webp`: actual capstone photograph from the project report
-
-## Content maintenance
-
-Employer work is described at a summary level and kept separate from public projects. No employer data or client code is included. Keep titles, dates, education, and contact details in sync with the resume PDF.
-
-## Checks before publishing
-
-Review at 320, 390, 768, and 1440 px; test both themes, tab arrow keys/Home/End, menu Tab/Shift+Tab/Escape, section anchors, reduced motion, and disabled JavaScript. Check the console and external links.
+| Path | Purpose |
+| --- | --- |
+| `index.html` | Content, structure and metadata |
+| `styles.css` | Design tokens, layout, themes and responsive rules |
+| `script.js` | Theme, navigation, reveal, filters, popups, GitHub feed, quick menu and hero canvas |
+| `assets/projects/` | Project cover art (light and dark) |
+| `assets/Ashwin-Resume.pdf` | Downloadable resume |
 
 ## License
 
