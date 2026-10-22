@@ -114,7 +114,7 @@
 
   // ---------------------------------------------------------------- typed roles
   var typedEl = $('#typed');
-  var roles = ['Power BI reports', 'clean data models', 'pipelines with ADF & Airflow', 'QlikView → Power BI migrations', 'analytics that drive decisions'];
+  var roles = ['Power BI dashboards', 'QlikView apps', 'PowerApps business apps', 'Snowflake & SQL data models', 'pipelines with ADF & Airflow'];
   if (typedEl && !reduceMotion.matches) {
     var ri = 0, ci = roles[0].length, deleting = true;
     var typeLoop = function () {
