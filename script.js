@@ -2,6 +2,7 @@
   'use strict';
 
   var root = document.documentElement;
+  root.classList.add('reveal-ready');
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
   var $ = function (sel, ctx) { return (ctx || document).querySelector(sel); };
   var $$ = function (sel, ctx) { return Array.prototype.slice.call((ctx || document).querySelectorAll(sel)); };
@@ -91,6 +92,7 @@
     menuBtn.setAttribute('aria-expanded', String(open));
     menuBtn.setAttribute('aria-label', open ? 'Close menu' : 'Open menu');
     document.body.style.overflow = open ? 'hidden' : '';
+    ['main', 'footer'].forEach(function (s) { var el = $(s); if (el) el.inert = open; });
     if (open) { var first = $('a', menu); if (first) first.focus(); }
   }
   menuBtn.addEventListener('click', function () { setMenu(menu.hidden); });
@@ -156,7 +158,7 @@
         $$('.count', el).forEach(runCounter);
         io.unobserve(el);
       });
-    }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+    }, { threshold: 0, rootMargin: '0px 0px -8% 0px' });
     reveals.forEach(function (el) {
       $$('.count', el).forEach(function (c) { c.textContent = '0'; });
       io.observe(el);
@@ -252,7 +254,7 @@
   }
   modal.addEventListener('close', function () {
     document.body.style.overflow = '';
-    if (lastOpener) lastOpener.focus();
+    if (lastOpener && !palette.open) lastOpener.focus();
   });
   modal.addEventListener('click', function (e) { if (e.target === modal) closeModal(); });
   $('#modalClose').addEventListener('click', closeModal);
@@ -415,7 +417,7 @@
   var canvas = $('#heroCanvas');
   if (canvas && canvas.getContext) {
     var ctx = canvas.getContext('2d');
-    var W = 0, H = 0, dpr = 1, parts = [], colors = [], running = false, raf = 0;
+    var W = 0, H = 0, dpr = 1, parts = [], colors = [], running = false, raf = 0, inView = true;
     var readColors = function () {
       var cs = getComputedStyle(root);
       colors = ['--violet', '--teal', '--orange'].map(function (v) { return hexToRgb(cs.getPropertyValue(v).trim()); });
@@ -488,9 +490,9 @@
     var rt;
     window.addEventListener('resize', function () { clearTimeout(rt); rt = setTimeout(function () { resize(); if (!running) frame(performance.now()); }, 150); });
     if ('IntersectionObserver' in window) {
-      new IntersectionObserver(function (en) { en[0].isIntersecting ? start() : stop(); }).observe(canvas);
+      new IntersectionObserver(function (en) { inView = en[0].isIntersecting; inView ? start() : stop(); }).observe(canvas);
     } else { start(); }
-    document.addEventListener('visibilitychange', function () { document.hidden ? stop() : start(); });
-    reduceMotion.addEventListener('change', function () { reduceMotion.matches ? stop() : start(); });
+    document.addEventListener('visibilitychange', function () { (document.hidden || !inView) ? stop() : start(); });
+    reduceMotion.addEventListener('change', function () { (reduceMotion.matches || !inView) ? stop() : start(); });
   }
 })();

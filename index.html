@@ -14,7 +14,7 @@
 <meta property="og:url" content="https://ashwinpr15.github.io/">
 <meta property="og:image" content="https://ashwinpr15.github.io/assets/portrait.jpg">
 <meta name="twitter:card" content="summary">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%23a78bfa'/%3E%3Cstop offset='.5' stop-color='%2300d2be'/%3E%3Cstop offset='1' stop-color='%23ff8a5c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%230a0d12'/%3E%3Ctext x='32' y='42' font-family='Arial' font-weight='700' font-size='26' text-anchor='middle' fill='url(%23g)'%3EAPR%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' x2='1' y1='0' y2='1'%3E%3Cstop offset='0' stop-color='%23a78bfa'/%3E%3Cstop offset='.5' stop-color='%2300d2be'/%3E%3Cstop offset='1' stop-color='%23ff8a5c'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='%230a0d12'/%3E%3Ctext x='32' y='42' font-family='Arial'%20font-weight='700'%20font-size='26'%20text-anchor='middle'%20fill='url(%23g)'%3EAPR%3C/text%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@400;500;600&amp;family=Space+Grotesk:wght@500;600;700&amp;display=swap" rel="stylesheet">
@@ -26,7 +26,6 @@
     try { t = localStorage.getItem('theme'); } catch (e) {}
     if (t !== 'light' && t !== 'dark') t = matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
     document.documentElement.setAttribute('data-theme', t);
-    document.documentElement.classList.add('js');
   })();
 </script>
 </head>
@@ -67,7 +66,7 @@
       <p class="status-pill"><span class="pulse-dot" aria-hidden="true"></span>MSBA student · Boston, MA <span class="sep" aria-hidden="true">·</span> <span id="localTime">Boston time</span></p>
       <p class="eyebrow">Hello, I'm</p>
       <h1 id="heroName">Ashwin <span class="grad-text">Pillanda Ravindra</span></h1>
-      <p class="typed-line">I turn data into <span class="typed" id="typed">Power BI reports</span><span class="caret" aria-hidden="true"></span></p>
+      <p class="typed-line"><span class="sr-only">I turn data into Power BI reports, data models, pipelines and analytics that drive decisions.</span><span aria-hidden="true">I turn data into <span class="typed" id="typed">Power BI reports</span><span class="caret"></span></span></p>
       <p class="hero-lede">An Electronics &amp; CS engineer who spent about <strong>five years at Tata Consultancy Services as a Business Intelligence Developer</strong>, and now studies Business Analytics at <strong>Boston University's Questrom School of Business</strong>.</p>
       <ol class="path" aria-label="Career path">
         <li class="c-violet"><span class="path-dot" aria-hidden="true"></span>Electronics &amp; CS Engineer</li>
@@ -101,10 +100,10 @@
 <!-- ===================================================== KPIs -->
 <section class="kpis" aria-label="Highlights">
   <div class="wrap kpi-grid">
-    <div class="kpi c-teal reveal"><p class="kpi-num"><span class="tilde">~</span><span class="count" data-to="5">5</span><span class="unit"> yrs</span></p><p class="kpi-label">Enterprise BI at TCS</p><p class="kpi-sub">Aug 2021 – Aug 2026</p></div>
-    <div class="kpi c-blue reveal"><p class="kpi-num"><span class="count" data-to="6">6</span>+</p><p class="kpi-label">QlikView → Power BI</p><p class="kpi-sub">application migrations</p></div>
-    <div class="kpi c-violet reveal"><p class="kpi-num"><span class="count" data-to="3">3</span></p><p class="kpi-label">Global enterprise clients</p><p class="kpi-sub">Stellantis · Samsung · Bosch</p></div>
-    <div class="kpi c-orange reveal"><p class="kpi-num"><span class="count" data-to="330">330</span>+</p><p class="kpi-label">GRE score</p><p class="kpi-sub">Graduate admissions test</p></div>
+    <div class="kpi c-teal reveal"><p class="kpi-num"><span class="sr-only">About 5 years</span><span aria-hidden="true"><span class="tilde">~</span><span class="count" data-to="5">5</span><span class="unit"> yrs</span></span></p><p class="kpi-label">Enterprise BI at TCS</p><p class="kpi-sub">Aug 2021 – Aug 2026</p></div>
+    <div class="kpi c-blue reveal"><p class="kpi-num"><span class="sr-only">6 or more</span><span aria-hidden="true"><span class="count" data-to="6">6</span>+</span></p><p class="kpi-label">QlikView → Power BI</p><p class="kpi-sub">application migrations</p></div>
+    <div class="kpi c-violet reveal"><p class="kpi-num"><span class="sr-only">3</span><span aria-hidden="true"><span class="count" data-to="3">3</span></span></p><p class="kpi-label">Global enterprise clients</p><p class="kpi-sub">Stellantis · Samsung · Bosch</p></div>
+    <div class="kpi c-orange reveal"><p class="kpi-num"><span class="sr-only">330 or more</span><span aria-hidden="true"><span class="count" data-to="330">330</span>+</span></p><p class="kpi-label">GRE score</p><p class="kpi-sub">Graduate admissions test</p></div>
   </div>
 </section>
 
@@ -455,7 +454,7 @@
       </article>
     </div>
 
-    <div class="gh-feed reveal" aria-labelledby="ghTitle">
+    <section class="gh-feed reveal" aria-labelledby="ghTitle">
       <div class="gh-head">
         <h3 id="ghTitle"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.7c-2.8.6-3.4-1.3-3.4-1.3-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.5 2.3 1.1 2.9.8.1-.6.3-1.1.6-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.6 9.6 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.8V21c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg>Latest on GitHub</h3>
         <a href="https://github.com/ashwinpr15?tab=repositories" target="_blank" rel="noopener">All repositories ↗</a>
@@ -463,7 +462,7 @@
       <ul class="gh-list" id="ghList">
         <li class="gh-empty">Loading recent activity… <a href="https://github.com/ashwinpr15?tab=repositories" target="_blank" rel="noopener">or browse on GitHub ↗</a></li>
       </ul>
-    </div>
+    </section>
   </div>
 </section>
 
