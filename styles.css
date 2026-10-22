@@ -314,6 +314,21 @@ svg { width: 1em; height: 1em; fill: none; stroke: currentColor; stroke-width: 2
 .section-head h2, .contact h2 { margin-top: 14px; font-size: clamp(30px, 4.2vw, 48px); font-weight: 700; }
 .section-lede { margin-top: 16px; font-size: 17px; color: var(--muted); }
 
+/* about: intro text beside a personal photo */
+.about-top { display: grid; grid-template-columns: 1.35fr 0.65fr; gap: 48px; align-items: center; margin-bottom: 44px; }
+.about-top .section-head { margin-bottom: 0; }
+.about-top .section-lede + .section-lede { margin-top: 12px; }
+.about-photo { margin: 0; justify-self: end; width: 100%; max-width: 340px; }
+.about-photo img {
+  width: 100%; aspect-ratio: 4 / 5; object-fit: cover; border-radius: 22px;
+  border: 1px solid var(--border); box-shadow: var(--shadow);
+  rotate: 2deg; transition: rotate 0.4s var(--ease), transform 0.4s var(--ease);
+}
+.about-photo img:hover { rotate: 0deg; transform: translateY(-4px); }
+@media (max-width: 900px) {
+  .about-top { grid-template-columns: 1fr; gap: 28px; }
+  .about-photo { justify-self: center; max-width: 300px; }
+}
 /* ------------------------------------------------------------- pillars */
 .pillars { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
 .pillar {
