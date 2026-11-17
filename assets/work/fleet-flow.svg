@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-label="Illustrative pipeline for the automated fleet sales report">
+  <rect width="1200" height="600" fill="#ffffff"/>
+  <g font-family="Inter, Arial, Helvetica, sans-serif">
+    <text x="60" y="78" font-size="30" font-weight="700" fill="#0f172a">Fleet sales report: automated end to end</text>
+    <text x="60" y="114" font-size="20" fill="#475569">Illustrative pipeline · generic labels, no client data</text>
+
+    <g fill="none" stroke="#94a3b8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M262 300h34m-12-10 12 10-12 10"/>
+      <path d="M494 300h34m-12-10 12 10-12 10"/>
+      <path d="M726 300h34m-12-10 12 10-12 10"/>
+      <path d="M958 300h34m-12-10 12 10-12 10"/>
+    </g>
+
+    <g font-size="21" font-weight="650" fill="#0f172a" text-anchor="middle">
+      <rect x="60" y="220" width="196" height="160" rx="14" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="158" y="292">Source</text><text x="158" y="320">data</text>
+      <rect x="302" y="220" width="186" height="160" rx="14" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="395" y="292">Automated</text><text x="395" y="320">extraction</text>
+      <rect x="534" y="220" width="186" height="160" rx="14" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="627" y="292">Transformation</text><text x="627" y="320">and checks</text>
+      <rect x="766" y="220" width="186" height="160" rx="14" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="859" y="292">Report</text><text x="859" y="320">model</text>
+      <rect x="998" y="220" width="142" height="160" rx="14" fill="#a6192e" stroke="#a6192e" stroke-width="2"/>
+      <text x="1069" y="292" fill="#ffffff">Fleet sales</text><text x="1069" y="320" fill="#ffffff">report</text>
+    </g>
+
+    <rect x="60" y="440" width="1080" height="84" rx="14" fill="#fbeef0" stroke="#e7b8bf" stroke-width="2"/>
+    <text x="90" y="477" font-size="21" font-weight="650" fill="#0f172a">Before: each step was done by hand.</text>
+    <text x="90" y="506" font-size="20" fill="#475569">After: the whole path runs without manual assembly, saving an estimated ~$80K (₹70 lakh) a year.</text>
+  </g>
+</svg>
