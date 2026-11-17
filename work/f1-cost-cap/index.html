@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Formula 1 Cost Cap and Competitive Balance | Ashwin Pillanda Ravindra</title>
+<meta name="description" content="A BU Questrom team analysis: after the 2021 cost cap, the top two F1 teams&#x27; points share fell 2.58 percentage points, and the comparison was inconclusive (p = 0.245).">
+<link rel="canonical" href="https://ashwinpr15.github.io/work/f1-cost-cap/">
+<meta name="theme-color" content="#f8fafc" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#0d1117" media="(prefers-color-scheme: dark)">
+<meta property="og:site_name" content="Ashwin Pillanda Ravindra">
+<meta property="og:locale" content="en_US">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://ashwinpr15.github.io/work/f1-cost-cap/">
+<meta property="og:title" content="Case study: Did Formula 1&#x27;s cost cap level the grid?">
+<meta property="og:description" content="A BU Questrom team analysis: after the 2021 cost cap, the top two F1 teams&#x27; points share fell 2.58 percentage points, and the comparison was inconclusive (p = 0.245).">
+<meta property="og:image" content="https://ashwinpr15.github.io/assets/social-card.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Ashwin Pillanda Ravindra: Business Intelligence Developer and MS in Business Analytics student at Boston University">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
+<link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="/styles.css">
+<script>
+  // Apply a saved theme choice before first paint. With no choice, CSS follows the system setting.
+  (function () {
+    try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
+  })();
+</script>
+<script src="/script.js" defer></script>
+</head>
+<body>
+<a class="skip-link" href="#main">Skip to content</a>
+
+<header class="site-header">
+  <div class="wrap header-inner">
+    <a class="brand" href="/"><span class="brand-full">Ashwin Pillanda Ravindra</span><span class="brand-short" aria-hidden="true">APR</span></a>
+    <nav class="site-nav" aria-label="Main">
+      <a href="/#work" aria-current="page">Work</a>
+      <a href="/#experience">Experience</a>
+      <a href="/#education">Education</a>
+      <a href="/#contact">Contact</a>
+      <a class="btn btn-sm btn-primary nav-resume" href="/assets/Ashwin-Resume.pdf">Resume</a>
+    </nav>
+    <div class="header-actions">
+      <a class="btn btn-sm btn-primary nav-resume-sm" href="/assets/Ashwin-Resume.pdf">Resume</a>
+      <button class="icon-btn" id="themeToggle" type="button" aria-label="Switch color theme" hidden>
+        <svg class="i-sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="i-moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20 14.5A8 8 0 0 1 9.5 4a8 8 0 1 0 10.5 10.5Z"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<main id="main" tabindex="-1">
+<div class="wrap">
+  <p class="crumb"><a href="/#work">← All work</a></p>
+  <header class="cs-head">
+    <p class="eyebrow">Case study · BU Questrom · BA780</p>
+    <h1>Did Formula 1's cost cap level the grid?</h1>
+    <p class="cs-summary">A team analysis of constructor points, wins and podiums across 11 pre-cap seasons (2010–2020) and 5 post-cap seasons (2021–2025).</p>
+    <dl class="cs-facts"><div><dt>Course</dt><dd>BA780 Introduction to Data Analytics</dd></div><div><dt>Team</dt><dd>B05, four members</dd></div><div><dt>When</dt><dd>Fall 2026</dd></div><div><dt>Tools</dt><dd>Python, pandas, SciPy, Matplotlib</dd></div></dl>
+    <div class="cs-result">
+      <p>The top two teams' average points share fell 2.58 percentage points (54.72% → 52.14%), and the comparison was inconclusive (Welch t = −1.215, p = 0.245).</p>
+      <p>Bottom line: a redistribution of success, with limited evidence of broad, lasting parity.</p>
+    </div>
+  </header>
+
+  <figure class="figure">
+    <img src="/assets/work/f1-01-top-two-points-share.webp" alt="Line chart of the top-two constructors' share of season points, 2010 to 2025. The pre-cap average is 54.72 percent and the post-cap average is 52.14 percent." width="1188" height="612">
+    <figcaption>Top-two constructor points share by season. Dashed lines are the pre-cap and post-cap averages. Chart from the team's notebook; data from F1DB (CC BY 4.0).</figcaption>
+  </figure>
+  <div class="cs-body prose">
+    <section aria-labelledby="problem">
+      <h2 id="problem">Business problem</h2>
+      <p>Formula 1 introduced a budget cap in 2021, in part to narrow the gap between the richest teams and the rest. We asked whether it helped more teams compete near the front, and what that means for the FIA, the teams, sponsors and broadcasters.</p>
+    </section>
+    <section aria-labelledby="role">
+      <h2 id="role">My role</h2>
+      <p>Team B05: Adrian Marcell, Ashwin Pillanda Ravindra, Jenniffer Hierro Cruz and Saleha Hassan Alvi.</p>
+      <p class="todo">Your specific contribution to the project (for example the data pipeline, the statistical tests, the charts, the recommendations or the presentation).</p>
+    </section>
+    <section aria-labelledby="approach">
+      <h2 id="approach">Approach</h2>
+      <ol>
+        <li>Download a fixed F1DB data release (v2026.15.1) and check its SHA-256 before use.</li>
+        <li>Audit missing values and duplicates, join constructors, standings and race results, and document team renames.</li>
+        <li>Compute each constructor's share of season points and check that each season totals 100%.</li>
+        <li>Compare 2010–2020 with 2021–2025, giving every season equal weight, with extra checks on the baseline period and on individual seasons.</li>
+        <li>Explain the results with descriptive statistics, exploratory Welch tests and 15 charts.</li>
+      </ol>
+    </section>
+    <section aria-labelledby="findings">
+      <h2 id="findings">Findings</h2>
+      <ul class="stats">
+        <li><b>54.72% → 52.14%</b><span>Top-two points share, before vs after the cap</span></li>
+        <li><b>p = 0.245</b><span>Welch test on that change: inconclusive</span></li>
+        <li><b>69.79%</b><span>Big Three share after the cap if 2025 is excluded, above the pre-cap 67.51%</span></li>
+        <li><b>5.18 → 6.00</b><span>Teams reaching a podium per season</span></li>
+        <li><b>3.18 → 3.20</b><span>Teams winning a race per season</span></li>
+        <li><b>+7.48 pp</b><span>McLaren's gain in average points share, the largest</span></li>
+      </ul>
+      <div class="figure-grid stack">
+        <figure class="figure">
+          <img src="/assets/work/f1-05-the-influence-of-2025-800.webp" alt="Chart of Ferrari, Mercedes and Red Bull combined points share, with and without the 2025 season" width="800" height="421" loading="lazy">
+          <figcaption>The Big Three result reverses depending on whether 2025 is included.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="/assets/work/f1-06-gains-and-losses-by-team-800.webp" alt="Bar chart of the change in average points share by team after the cap" width="800" height="477" loading="lazy">
+          <figcaption>McLaren and Red Bull gained the most; Mercedes, Williams and Alpine lost share.</figcaption>
+        </figure>
+        <figure class="figure">
+          <img src="/assets/work/f1-12-teams-reaching-wins-and-podiums-800.webp" alt="Chart of the number of teams reaching wins and podiums each season" width="800" height="396" loading="lazy">
+          <figcaption>More teams reached the podium, but race winners barely changed.</figcaption>
+        </figure>
+      </div>
+    </section>
+    <section aria-labelledby="recs">
+      <h2 id="recs">Recommendations</h2>
+      <ul>
+        <li><strong>FIA and F1:</strong> review several balance measures, both baselines, and results with and without the latest season before changing financial rules.</li>
+        <li><strong>Constructors:</strong> set targets against relevant improving peers.</li>
+        <li><strong>Sponsors:</strong> shortlist emerging contenders and agree performance conditions.</li>
+        <li><strong>Broadcasters:</strong> plan for both close and dominant seasons. Post-cap title margins ranged from 0.53 pp (2024) to 18.35 pp (2023).</li>
+      </ul>
+    </section>
+    <section aria-labelledby="limits">
+      <h2 id="limits">Limitations</h2>
+      <p>Five post-cap seasons is a small sample, and the 2022 technical reset (new ground-effect cars plus aerodynamic testing limits) overlaps the cap, so its effect can't be isolated. Points share measures sporting results, not spending or car speed, and the supporting tests are exploratory and not adjusted for multiple comparisons.</p>
+    </section>
+    <section aria-labelledby="artifacts">
+      <h2 id="artifacts">Artifacts</h2>
+      <div class="artifact-links">
+        <a class="btn btn-primary" href="https://github.com/ashwinpr15/BA780-F1-Cost-Cap/blob/main/B05-F1-Cost-Cap.ipynb">Notebook on GitHub</a>
+        <a class="btn" href="https://nbviewer.org/github/ashwinpr15/BA780-F1-Cost-Cap/blob/main/B05-F1-Cost-Cap.ipynb">Notebook on nbviewer</a>
+        <a class="btn" href="https://github.com/ashwinpr15/BA780-F1-Cost-Cap/blob/main/presentation/BA780-F1-Cost-Cap-Presentation.pdf">Slides (PDF)</a>
+        <a class="btn" href="https://github.com/ashwinpr15/BA780-F1-Cost-Cap">Source repository</a>
+      </div>
+    </section>
+    <nav class="next-cs" aria-label="More case studies"><a href="/work/qlikview-power-bi-migration/">← QlikView to Power BI migration</a><a href="/#work">All work →</a></nav>
+  </div>
+</div>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap footer-inner">
+    <p>© 2026 Ashwin Pillanda Ravindra</p>
+    <p><a href="https://github.com/ashwinpr15/ashwinpr15.github.io">Site source on GitHub</a></p>
+  </div>
+</footer>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-label="How the parts of a QlikView application map to Power BI">
+  <rect width="1200" height="600" fill="#ffffff"/>
+  <g font-family="Inter, Arial, Helvetica, sans-serif">
+    <text x="60" y="78" font-size="30" font-weight="700" fill="#0f172a">QlikView to Power BI: what gets rebuilt</text>
+    <text x="60" y="114" font-size="20" fill="#475569">Illustrative mapping · no client data</text>
+
+    <text x="270" y="176" font-size="20" font-weight="700" fill="#475569" text-anchor="middle">QLIKVIEW</text>
+    <text x="930" y="176" font-size="20" font-weight="700" fill="#a6192e" text-anchor="middle">POWER BI</text>
+
+    <g font-size="21" font-weight="650" fill="#0f172a" text-anchor="middle">
+      <rect x="60" y="198" width="420" height="68" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="270" y="240">Load script</text>
+      <rect x="60" y="284" width="420" height="68" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="270" y="326">Associative data model</text>
+      <rect x="60" y="370" width="420" height="68" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="270" y="412">Set-analysis expressions</text>
+      <rect x="60" y="456" width="420" height="68" rx="12" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="2"/>
+      <text x="270" y="498">Sheets and charts</text>
+
+      <rect x="720" y="198" width="420" height="68" rx="12" fill="#fbeef0" stroke="#e7b8bf" stroke-width="2"/>
+      <text x="930" y="240">Power Query and dataflows</text>
+      <rect x="720" y="284" width="420" height="68" rx="12" fill="#fbeef0" stroke="#e7b8bf" stroke-width="2"/>
+      <text x="930" y="326">Star schema model</text>
+      <rect x="720" y="370" width="420" height="68" rx="12" fill="#fbeef0" stroke="#e7b8bf" stroke-width="2"/>
+      <text x="930" y="412">DAX measures</text>
+      <rect x="720" y="456" width="420" height="68" rx="12" fill="#fbeef0" stroke="#e7b8bf" stroke-width="2"/>
+      <text x="930" y="498">Report pages</text>
+    </g>
+
+    <g fill="none" stroke="#94a3b8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M500 232h200m-14-11 14 11-14 11"/>
+      <path d="M500 318h200m-14-11 14 11-14 11"/>
+      <path d="M500 404h200m-14-11 14 11-14 11"/>
+      <path d="M500 490h200m-14-11 14 11-14 11"/>
+    </g>
+  </g>
+</svg>

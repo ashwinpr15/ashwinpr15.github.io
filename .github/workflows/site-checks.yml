@@ -1,0 +1,43 @@
+name: Site checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - run: npm ci
+      - name: Validate HTML
+        run: npm run validate
+      - name: Install browser
+        run: npx playwright install --with-deps chromium
+      - name: Smoke, link and accessibility tests
+        run: npm test -- --trace off
+
+  lighthouse:
+    runs-on: ubuntu-latest
+    continue-on-error: true
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Lighthouse lab scores (home page)
+        run: |
+          python3 -m http.server 8123 >/dev/null 2>&1 &
+          sleep 2
+          npx --yes lighthouse http://localhost:8123/ --quiet \
+            --chrome-flags="--headless --no-sandbox" \
+            --output=json --output-path=lighthouse.json
+          node -e "const r=require('./lighthouse.json');for(const k in r.categories)console.log(k.padEnd(16),Math.round(r.categories[k].score*100));for(const a of ['largest-contentful-paint','cumulative-layout-shift','total-blocking-time'])console.log(a.padEnd(28),r.audits[a].displayValue)"
