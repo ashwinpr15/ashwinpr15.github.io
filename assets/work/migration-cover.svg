@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-label="QlikView applications migrated to Power BI">
+  <rect width="1200" height="600" fill="#ffffff"/>
+  <g font-family="Inter, Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="700">
+    <rect x="80" y="150" width="420" height="170" rx="22" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="3"/>
+    <text x="290" y="252" font-size="56" fill="#0f172a">QlikView</text>
+    <rect x="700" y="150" width="420" height="170" rx="22" fill="#a6192e"/>
+    <text x="910" y="252" font-size="56" fill="#ffffff">Power BI</text>
+    <path d="M530 235h130m-26-22 26 22-26 22" fill="none" stroke="#94a3b8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <rect x="80" y="380" width="1040" height="96" rx="48" fill="#fbeef0" stroke="#e7b8bf" stroke-width="3"/>
+    <text x="600" y="444" font-size="42" fill="#a6192e">6+ applications rebuilt</text>
+  </g>
+</svg>

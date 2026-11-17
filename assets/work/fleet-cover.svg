@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-label="Extract, transform, report: an automated reporting pipeline">
+  <rect width="1200" height="600" fill="#ffffff"/>
+  <g font-family="Inter, Arial, Helvetica, sans-serif" text-anchor="middle" font-weight="700">
+    <rect x="80" y="150" width="280" height="170" rx="22" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="3"/>
+    <text x="220" y="252" font-size="50" fill="#0f172a">Extract</text>
+    <rect x="460" y="150" width="280" height="170" rx="22" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="3"/>
+    <text x="600" y="252" font-size="50" fill="#0f172a">Transform</text>
+    <rect x="840" y="150" width="280" height="170" rx="22" fill="#a6192e"/>
+    <text x="980" y="252" font-size="50" fill="#ffffff">Report</text>
+    <g fill="none" stroke="#94a3b8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M378 235h62m-20-18 20 18-20 18"/>
+      <path d="M758 235h62m-20-18 20 18-20 18"/>
+    </g>
+    <rect x="80" y="380" width="1040" height="96" rx="48" fill="#fbeef0" stroke="#e7b8bf" stroke-width="3"/>
+    <text x="600" y="444" font-size="42" fill="#a6192e">Manual steps → fully automated</text>
+  </g>
+</svg>
