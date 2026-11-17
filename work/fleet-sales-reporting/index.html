@@ -21,14 +21,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/styles.css?v=2">
 <script>
   // Apply a saved theme choice before first paint. With no choice, CSS follows the system setting.
   (function () {
     try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
   })();
 </script>
-<script src="/script.js" defer></script>
+<script src="/script.js?v=2" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -71,12 +71,12 @@
     <section aria-labelledby="problem">
       <h2 id="problem">Business problem</h2>
       <p>Before the automation, producing Stellantis' fleet sales report took manual work on every cycle, from pulling the data to assembling the final report.</p>
-      <p class="todo">How often the report ran, who used it and for which decisions, which manual steps it involved (pulling data, cleaning, combining, formatting, distributing), and roughly how many hours each cycle took.</p>
+      <!-- To fill in: How often the report ran, who used it and for which decisions, which manual steps it involved (pulling data, cleaning, combining, formatting, distributing), and roughly how many hours each cycle took. -->
     </section>
     <section aria-labelledby="role">
       <h2 id="role">My role</h2>
       <p>I built the automation as a Business Intelligence Developer on the TCS team supporting Stellantis.</p>
-      <p class="todo">What you built yourself versus with the team, and who you worked with on the client side.</p>
+      <!-- To fill in: What you built yourself versus with the team, and who you worked with on the client side. -->
     </section>
     <section aria-labelledby="approach">
       <h2 id="approach">Approach</h2>
@@ -85,19 +85,16 @@
         <img src="/assets/work/fleet-flow.svg" alt="Illustrative pipeline: source data, automated extraction, transformation and checks, report model, and the published fleet sales report" width="1200" height="600" loading="lazy">
         <figcaption>Illustrative diagram of the automated pipeline. Generic labels, no client data.</figcaption>
       </figure>
-      <p class="todo">Tools and steps: where the data came from, how extraction was scheduled, where transformations ran (for example SQL or Python), how the report was built and how it reached its readers.</p>
+      <!-- To fill in: Tools and steps: where the data came from, how extraction was scheduled, where transformations ran (for example SQL or Python), how the report was built and how it reached its readers. -->
     </section>
-    <section aria-labelledby="validation">
-      <h2 id="validation">Validation</h2>
-      <p class="todo">How you checked the automated report against the manual one before switching over (for example, comparing totals for the same periods), and how errors are caught now.</p>
-    </section>
+    <!-- To fill in: Add a Validation section: How you checked the automated report against the manual one before switching over (for example, comparing totals for the same periods), and how errors are caught now. -->
     <section aria-labelledby="result">
       <h2 id="result">Result</h2>
       <ul>
         <li>The report runs end to end without manual assembly.</li>
         <li>Estimated savings of about ₹70 lakh (~$80K) a year in manual work.</li>
       </ul>
-      <p class="todo">The assumptions behind the estimate: hours saved per cycle, cycles per year and the cost rate used. If hours are better documented than cost, lead with hours.</p>
+      <!-- To fill in: The assumptions behind the estimate: hours saved per cycle, cycles per year and the cost rate used. If hours are better documented than cost, lead with hours. -->
     </section>
     <section aria-labelledby="limits">
       <h2 id="limits">Limitations</h2>

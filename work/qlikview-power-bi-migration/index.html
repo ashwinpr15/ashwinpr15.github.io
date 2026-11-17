@@ -21,14 +21,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <link rel="icon" href="/assets/favicon.svg" type="image/svg+xml">
 <link rel="preload" href="/assets/fonts/inter-latin-wght-normal.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="/styles.css">
+<link rel="stylesheet" href="/styles.css?v=2">
 <script>
   // Apply a saved theme choice before first paint. With no choice, CSS follows the system setting.
   (function () {
     try { var t = localStorage.getItem('theme'); if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t); } catch (e) {}
   })();
 </script>
-<script src="/script.js" defer></script>
+<script src="/script.js?v=2" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -71,12 +71,12 @@
     <section aria-labelledby="problem">
       <h2 id="problem">Business problem</h2>
       <p>These business applications ran on QlikView and were being moved to Power BI, which meant rebuilding each one's data model and reports rather than copying them across.</p>
-      <p class="todo">Why the client moved off QlikView (for example licensing, platform standardization or self-service), and who used these applications.</p>
+      <!-- To fill in: Why the client moved off QlikView (for example licensing, platform standardization or self-service), and who used these applications. -->
     </section>
     <section aria-labelledby="role">
       <h2 id="role">My role</h2>
       <p>I migrated 6+ of these applications as a Business Intelligence Developer at TCS.</p>
-      <p class="todo">What you did yourself versus with the team, and which client or business area the applications served.</p>
+      <!-- To fill in: What you did yourself versus with the team, and which client or business area the applications served. -->
     </section>
     <section aria-labelledby="approach">
       <h2 id="approach">Approach</h2>
@@ -85,12 +85,9 @@
         <img src="/assets/work/migration-map.svg" alt="How QlikView parts map to Power BI: load script to Power Query and dataflows, associative data model to a star schema, set-analysis expressions to DAX measures, and sheets to report pages" width="1200" height="600" loading="lazy">
         <figcaption>How the pieces of a QlikView application map to Power BI. Illustrative, no client data.</figcaption>
       </figure>
-      <p class="todo">Pick one representative migration. Describe its data model (fact and dimension tables), one KPI definition, and how its QlikView expression was rewritten in DAX. A recreated diagram with sample data works well here.</p>
+      <!-- To fill in: Pick one representative migration. Describe its data model (fact and dimension tables), one KPI definition, and how its QlikView expression was rewritten in DAX. A recreated diagram with sample data works well here. -->
     </section>
-    <section aria-labelledby="validation">
-      <h2 id="validation">Validation</h2>
-      <p class="todo">How you checked that the old and new reports agreed (for example, reconciling KPI totals by period and filter), plus any reconciliation, refresh, adoption or maintenance metrics you have records of.</p>
-    </section>
+    <!-- To fill in: Add a Validation section: How you checked that the old and new reports agreed (for example, reconciling KPI totals by period and filter), plus any reconciliation, refresh, adoption or maintenance metrics you have records of. -->
     <section aria-labelledby="result">
       <h2 id="result">Result</h2>
       <p>6+ applications moved from QlikView to Power BI with rebuilt data models and reports.</p>
