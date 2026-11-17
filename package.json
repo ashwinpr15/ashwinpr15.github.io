@@ -1,0 +1,16 @@
+{
+  "name": "ashwinpr15-portfolio-checks",
+  "private": true,
+  "description": "Checks for the static portfolio site. The site itself has no build step.",
+  "scripts": {
+    "serve": "python3 -m http.server 8123",
+    "validate": "html-validate \"*.html\" \"work/**/*.html\"",
+    "test": "playwright test",
+    "check": "npm run validate && npm test"
+  },
+  "devDependencies": {
+    "@axe-core/playwright": "^4.10.0",
+    "@playwright/test": "1.63.0",
+    "html-validate": "^9.0.0"
+  }
+}
